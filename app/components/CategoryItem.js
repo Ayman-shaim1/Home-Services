@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, Image, StyleSheet, TouchableOpacity} from "react-native";
+import colors from "../config/colors";
 
 export default function CategoryItem ({category}) {
     return (
@@ -12,13 +13,13 @@ export default function CategoryItem ({category}) {
 
 const styles = StyleSheet.create({
     category:{
-        width:120,
-        height:120,
-        paddingVertical:25,
+        width:100,
+        height:100,
+        paddingVertical:17,
         paddingHorizontal:15,
         borderWidth:1,
-        borderColor:'#D3D3D3',
-        margin:5,
+        borderColor:colors.gray,
+        margin:3,
         alignItems:'center',
         borderRadius:5,
     },

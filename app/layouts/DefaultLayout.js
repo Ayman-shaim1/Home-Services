@@ -1,11 +1,12 @@
 import React from "react";
 import { Screen } from "../components";
-import { HomeScreen } from "../screens";
+import { HomeScreen,LoginScreen } from "../screens";
 
 export default function DefaultLayout(){
     return (
         <Screen>
-            <HomeScreen/>
+            <LoginScreen/>
+            {/* <HomeScreen/> */}
         </Screen>
     )
 }

@@ -5,7 +5,7 @@ import { CategoriesContainer, Searchbar } from "../components";
 export default function HomeScreen()  {
     return (
        <View>
-         <Searchbar/>
+         {/* <Searchbar/> */}
          <CategoriesContainer/>
        </View>
     )

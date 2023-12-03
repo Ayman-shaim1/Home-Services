@@ -1,6 +1,6 @@
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { CategoryItem } from "../components";
+import { CategoryItem, Heading } from "../components";
 
 const CATEGORIES = [
   {
@@ -49,7 +49,7 @@ const CATEGORIES = [
 export default function CategoriesContainer (){
     return (
         <View>
-          <Text style={styles.text}>Categories</Text>
+          <Heading text="Categories" as="heading3"/>
           <View style={styles.container}>
               <FlatList
               data={CATEGORIES}
@@ -66,10 +66,7 @@ export default function CategoriesContainer (){
 const styles = StyleSheet.create({
   container:{
     alignItems:'center',
-    marginVertical:10,
+    marginVertical:15,
   },
-  text:{
-    fontSize:30,
-    fontWeight:'bold',
-  }
+  
 })
