@@ -13,23 +13,24 @@ export default function CategoryItem ({category}) {
 
 const styles = StyleSheet.create({
     category:{
-        width:100,
-        height:100,
+        width:112,
+        height:112,
         paddingVertical:17,
         paddingHorizontal:15,
         borderWidth:1,
         borderColor:colors.gray,
-        margin:3,
+        marginVertical:10,
+        marginHorizontal:5,
         alignItems:'center',
         borderRadius:5,
     },
     image:{
-        width:40,
-        height:40
+        width:50,
+        height:50
     },
     text:{
         marginTop:10,
-        fontSize:12,
+        fontSize:16,
         fontWeight:'bold'
     }
 }) 

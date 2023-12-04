@@ -4,7 +4,7 @@ import colors from "../config/colors";
 import { Ionicons } from '@expo/vector-icons';
 
 
-export default function TextInput({ placeholder,label,icon, secure = false }){
+export default function TextInput({ placeholder,label,icon, keyboardType, secure = false }){
     return (
         <View style={styles.container}> 
             {label && <Text style={styles.label}>{label}</Text>}
@@ -14,6 +14,7 @@ export default function TextInput({ placeholder,label,icon, secure = false }){
                     style={[styles.input,{
                         paddingLeft:icon ? 40 : 20
                     }]}
+                    keyboardType={keyboardType}
                     placeholder={placeholder}
                     secureTextEntry={secure}
                 />    
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     icon:{
        position:'absolute', 
        zIndex:1000,
-       top:'35%',
+       top:'38%',
        left:'4%'
     },
     label:{

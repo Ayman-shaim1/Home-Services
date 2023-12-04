@@ -6,6 +6,7 @@ import Button from "./Button";
 import Heading from "./Heading";
 import TextInput from "./TextInput";
 import Diviser from "./Diviser";
+import ImagePicker from "./ImagePicker";
 
 
 
@@ -13,6 +14,7 @@ import Diviser from "./Diviser";
 
 
 export {
+    ImagePicker,
     Diviser,
     TextInput,
     Button,

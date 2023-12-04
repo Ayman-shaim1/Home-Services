@@ -2,27 +2,30 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import LogoImage from "../assets/service.png";
 import { Button, Diviser, Heading,TextInput } from "../components";
+import colors from "../config/colors";
 
 export default function LoginScreen(){
     return (
         <View>
-            
             <View style={styles.container}>
                 <Image source={LogoImage} style={styles.logo}/>
-                <Heading text={"Login"} as="heading4" /> 
-                <Heading style={styles.subText} text={"please sign in to continue"} as={'heading6'} color={'gray'} />
+                <Heading text={"Login"} as="heading5" /> 
+                <Heading style={styles.subText} 
+                  text={"veuillez connecter pour continue"} 
+                  as={'heading6'} color={'gray'} />
             </View>
-           
+        
             <TextInput 
-                label="email :"
-                placeholder="enter email"
-                icon="person"
+                label="email"
+                placeholder="entrer un email"
+                icon="mail"
+                keyboardType="email-address"
                />
 
             <TextInput 
                icon="lock-closed"
-               label="password :"
-               placeholder="enter password" 
+               label="mot de passe"
+               placeholder="enter le mot de passe" 
                type='password'
                secure={true}
                />
@@ -34,9 +37,8 @@ export default function LoginScreen(){
             </View>
 
             <Button text={"Login"} icon={"log-in"}/>
-            <Button text={"Register"} color="secondary" icon={'person-add'} />
-            
-            <Diviser withOr/>
+
+            <Diviser withOr/>            
             
             <Button 
                text={"Login with gmail"}
@@ -44,6 +46,14 @@ export default function LoginScreen(){
                image={require("../assets/google.png")}
                />
 
+            <View style={styles.signupTextContainer}>
+                <Text style={styles.signupText}>
+                    new customer  
+                </Text>
+                <TouchableOpacity>
+                        <Text style={[styles.signupText,styles.signupTextBtn]}>sign up</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
@@ -51,15 +61,15 @@ export default function LoginScreen(){
 const styles = StyleSheet.create({
     container:{
         alignItems:'center',
-        margin:15,
+        margin:7,
     },
     subText:{
         marginTop:-5,
     },
     logo:{
         marginTop:10,
-        width:80,
-        height:80,
+        width:90,
+        height:90,
     },
     forgetPasswordContainer:{
         alignItems:'center',
@@ -70,5 +80,18 @@ const styles = StyleSheet.create({
     forgetPasswordText:{
         fontSize:16,
         fontWeight:'bold'
+    },
+    signupTextContainer:{
+        flexDirection:'row',
+        justifyContent:'center',
+        marginVertical:10,
+    },
+    signupText:{
+        fontSize:16,
+        fontWeight:'bold'
+    },
+    signupTextBtn:{
+        marginLeft:3,
+        color:colors.secondary
     }
 });
