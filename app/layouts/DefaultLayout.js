@@ -8,8 +8,8 @@ export default function DefaultLayout(){
     return (
         <Screen>
             {/* <LoginScreen/> */}
-            {/* <HomeScreen/> */}
-            <RegisterScreen/>
+            <HomeScreen/>
+            {/* <RegisterScreen/> */}
         </Screen>
     )
 }
