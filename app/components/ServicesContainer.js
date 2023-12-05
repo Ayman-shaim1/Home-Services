@@ -37,7 +37,7 @@ const SERVICES = [
   },
   {
     id:7,
-    name:'jardinier',
+    name:'Jardinage',
     icon:require("../assets/gardening.png"),
   },
   
