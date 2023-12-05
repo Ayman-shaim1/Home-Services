@@ -13,9 +13,9 @@ export default function CategoryItem ({category}) {
 
 const styles = StyleSheet.create({
     category:{
-        width:112,
-        height:112,
-        paddingVertical:17,
+        width:105,
+        height:105,
+        paddingVertical:14,
         paddingHorizontal:15,
         borderWidth:1,
         borderColor:colors.gray,
@@ -25,12 +25,12 @@ const styles = StyleSheet.create({
         borderRadius:5,
     },
     image:{
-        width:50,
-        height:50
+        width:40,
+        height:40
     },
     text:{
         marginTop:10,
-        fontSize:16,
+        fontSize:15,
         fontWeight:'bold'
     }
 }) 

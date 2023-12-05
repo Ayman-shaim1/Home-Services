@@ -1,12 +1,12 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import LogoImage from "../assets/service.png";
-import { Button, Diviser, Heading,TextInput } from "../components";
+import { Button, Diviser, Heading,Screen,TextInput } from "../components";
 import colors from "../config/colors";
 
 export default function LoginScreen(){
     return (
-        <View>
+        <Screen>
             <View style={styles.container}>
                 <Image source={LogoImage} style={styles.logo}/>
                 <Heading text={"Login"} as="heading5" /> 
@@ -54,7 +54,7 @@ export default function LoginScreen(){
                         <Text style={[styles.signupText,styles.signupTextBtn]}>sign up</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </Screen>
     )
 }
 

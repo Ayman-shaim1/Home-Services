@@ -1,13 +1,12 @@
 import React from "react";
 import Constants from "expo-constants";
 import { StyleSheet, SafeAreaView, View, ScrollView } from "react-native";
+import colors from "../config/colors";
 
 export default function Screen({ children, style }) {
   return (
     <SafeAreaView style={[styles.screen, style]}>
-      <ScrollView>
-          <View style={[styles.view, style]}>{children}</View>
-      </ScrollView>
+      <ScrollView style={[styles.view, style]}>{children}</ScrollView>
     </SafeAreaView>
   );
 }
@@ -18,8 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   view: {
-    paddingHorizontal:15,
-    paddingTop:20,
     flex: 1,
+    paddingHorizontal:10,
   },
 });

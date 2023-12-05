@@ -7,6 +7,7 @@ export default {
     warning: "#f0ad4e",
     success: "#4bbf73",
     gray:'#B0B0B0',
-    lightGray:'#F2F2F2'
+    lightGray:'#F2F2F2',
+    backgroundColor:'#f4f4f4'
   };
   

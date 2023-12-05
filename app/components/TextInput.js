@@ -4,9 +4,9 @@ import colors from "../config/colors";
 import { Ionicons } from '@expo/vector-icons';
 
 
-export default function TextInput({ placeholder,label,icon, keyboardType, secure = false }){
+export default function TextInput({ placeholder,label,icon, keyboardType, secure = false , style}){
     return (
-        <View style={styles.container}> 
+        <View style={[styles.container,style]}> 
             {label && <Text style={styles.label}>{label}</Text>}
             <View style={styles.inputContainer}>
                 {icon && <Ionicons  style={styles.icon} name={icon} size={14} color={colors.gray}/>}

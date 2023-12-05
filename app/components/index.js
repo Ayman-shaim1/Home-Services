@@ -7,6 +7,8 @@ import Heading from "./Heading";
 import TextInput from "./TextInput";
 import Diviser from "./Diviser";
 import ImagePicker from "./ImagePicker";
+import PackagesContainer from "./PackagesContainer";
+import PackageItem from "./PackageItem";
 
 
 
@@ -22,5 +24,7 @@ export {
     CategoryItem,
     CategoriesContainer,
     Screen,
-    Searchbar
+    Searchbar,
+    PackagesContainer,
+    PackageItem
 }
