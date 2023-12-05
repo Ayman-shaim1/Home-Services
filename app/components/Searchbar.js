@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet,   View } from "react-native";
 import colors from "../config/colors";
-import { Heading, TextInput } from "../components";
-
+import Heading from "./Heading";
+import TextInput from "./TextInput";
 export default function Searchbar (){
     return (
         <View style={styles.container}>

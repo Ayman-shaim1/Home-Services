@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, View ,FlatList, ScrollView} from "react-native";
 import colors from "../config/colors";
-import { PackageItem,Heading } from "../components";
+import Heading from "./Heading";
+import ServiceItem from "./ServiceItem";
 
 const PACKAGES = [
     {

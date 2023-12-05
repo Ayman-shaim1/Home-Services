@@ -1,9 +1,10 @@
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { CategoryItem, Heading } from "../components";
+import ServiceItem from "./ServiceItem";
+import Heading from "./Heading";
 import colors from "../config/colors";
 
-const CATEGORIES = [
+const SERVICES = [
   {
     id:1,
     name:'Menage',
@@ -43,10 +44,10 @@ const CATEGORIES = [
 ];
 
 
-export default function CategoriesContainer (){
+export default function ServicesContainer (){
     return (
         <View style={styles.container}>
-          <Heading text="Categories" as="heading5"/>
+          <Heading text="Services" as="heading5"/>
           <Heading 
             style={styles.headingText}
             text="Qu'est-ce que vous voulez comme service à domicile ?" 
@@ -54,9 +55,9 @@ export default function CategoriesContainer (){
             color="gray"/>
           <View style={styles.listContainer}>
               <FlatList
-                data={CATEGORIES}
+                data={SERVICES}
                 keyExtractor={(item) => item.id}
-                renderItem={({ item }) => <CategoryItem category={item} />}
+                renderItem={({ item,index }) => <ServiceItem service={item} index={index}/>}
                 numColumns={3}
                 scrollEnabled={false}
               />
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor:colors.white,
     marginTop:10,
     paddingVertical:10,
-    margin:10,
+    marginVertical:10,
     borderRadius:10,
   },
   listContainer:{

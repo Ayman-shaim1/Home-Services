@@ -1,5 +1,5 @@
-import CategoryItem from "./CategoryItem";
-import CategoriesContainer from "./CategoriesContainer";
+import ServiceItem from "./ServiceItem";
+import ServicesContainer from "./ServicesContainer";
 import Screen from "./Screen";
 import Searchbar from "./Searchbar";
 import Button from "./Button";
@@ -21,8 +21,8 @@ export {
     TextInput,
     Button,
     Heading,
-    CategoryItem,
-    CategoriesContainer,
+    ServiceItem,
+    ServicesContainer,
     Screen,
     Searchbar,
     PackagesContainer,
