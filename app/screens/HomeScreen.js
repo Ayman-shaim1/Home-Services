@@ -8,8 +8,8 @@ export default function HomeScreen()  {
        <View style={styles.container}>
          <Searchbar/>
          <ScrollView style={styles.scroller}>
-            <CategoriesContainer/>
             <PackagesContainer/>
+            <CategoriesContainer/>
          </ScrollView>
        </View>
     )

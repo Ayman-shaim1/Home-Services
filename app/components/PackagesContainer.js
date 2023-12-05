@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View ,FlatList} from "react-native";
+import { StyleSheet, View ,FlatList, ScrollView} from "react-native";
 import colors from "../config/colors";
 import { PackageItem,Heading } from "../components";
 
@@ -8,6 +8,11 @@ const PACKAGES = [
         id:1,
         image:require("../assets/jardinage.jpeg"),
         title:'jardinage & menage '
+    },
+    {
+        id:2,
+        image:require("../assets/coach-massage.jpeg"),
+        title:'coach & Kiné '
     }
 ]
 
@@ -23,15 +28,16 @@ export default function PackagesContainer (){
           as="heading6" 
           color="gray"/>        
           
-        <View style={styles.listContainer}>
-            <FlatList
-              data={PACKAGES}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item }) => <PackageItem package={item} />}
-              numColumns={3}
-              scrollEnabled={false}
-            />
-        </View>
+        <ScrollView 
+            style={styles.listContainer}
+            horizontal 
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false} 
+            >
+            {PACKAGES.map(item => (
+                <PackageItem package={item}/>
+            ))}
+        </ScrollView>
       </View>
     )
 }

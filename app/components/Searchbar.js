@@ -9,7 +9,7 @@ export default function Searchbar (){
             
             <Heading 
                 as="heading5"
-                text={"Chercher un de nous servie"} 
+                text={"Chercher un de nous service"} 
                 color="white" />
                 
             <TextInput 
