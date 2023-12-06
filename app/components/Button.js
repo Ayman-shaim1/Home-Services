@@ -1,18 +1,19 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import colors from "../config/colors";
-import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
-export default function Button ({ text, color = 'primary', image, icon}){
+export default function Button ({ text, color = 'primary',style, image, icon,onPress}){
     return (
         <TouchableOpacity 
-             style={[styles.btn,{
+            onPress={onPress}
+             style={[style,styles.btn,{
              backgroundColor:colors[color],
              borderColor:color === 'white' ? colors.gray : colors[color]
             }]}>
             {image && <Image source={image} style={styles.image}/>}
-            {icon && <Ionicons style={styles.icon} name={icon} size={18} color={color === 'white' ? colors.gray : colors.white}/>}
+            {icon && <MaterialCommunityIcons style={styles.icon} name={icon} size={18} color={color === 'white' ? colors.gray : colors.white}/>}
             <Text 
               style={[styles.text,{
                 color:color === 'white' ? colors.black : colors.white
@@ -26,7 +27,7 @@ const styles  = StyleSheet.create({
         marginRight:5,
     },
     btn:{
-        paddingVertical:20,
+        paddingVertical:17,
         alignItems:'center',
         // backgroundColor:colors.primary,
         borderRadius:15,

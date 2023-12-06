@@ -19,5 +19,6 @@ const styles = StyleSheet.create({
   view: {
     flex: 1,
     paddingHorizontal:10,
+    paddingTop:12,
   },
 });

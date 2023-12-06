@@ -18,12 +18,12 @@ export default function LoginScreen(){
             <TextInput 
                 label="email"
                 placeholder="entrer un email"
-                icon="mail"
+                icon="email"
                 keyboardType="email-address"
                />
 
             <TextInput 
-               icon="lock-closed"
+               icon="lock"
                label="mot de passe"
                placeholder="enter le mot de passe" 
                type='password'
@@ -36,7 +36,7 @@ export default function LoginScreen(){
                 </TouchableOpacity>    
             </View>
 
-            <Button text={"Login"} icon={"log-in"}/>
+            <Button text={"Login"} icon={"login"}/>
 
             <Diviser withOr/>            
             

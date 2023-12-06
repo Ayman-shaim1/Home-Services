@@ -9,6 +9,10 @@ import Diviser from "./Diviser";
 import ImagePicker from "./ImagePicker";
 import PackagesContainer from "./PackagesContainer";
 import PackageItem from "./PackageItem";
+import EmployeItem from "./EmployeItem";
+import Rating from "./Rating";
+import Dropdown from "./Dropdown";
+
 
 
 
@@ -16,6 +20,9 @@ import PackageItem from "./PackageItem";
 
 
 export {
+    Dropdown,
+    Rating,
+    EmployeItem,
     ImagePicker,
     Diviser,
     TextInput,

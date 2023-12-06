@@ -21,17 +21,17 @@ export default function RegisterScreen(){
             <TextInput 
                 label="nom"
                 placeholder="entrer votre nom "
-                icon="person"
+                icon="account"
                />
 
             <TextInput 
                 label="email"
                 placeholder="entrer un email"
-                icon="mail"
+                icon="email"
                />
 
             <TextInput 
-               icon="lock-closed"
+               icon="lock"
                label="mot de passe"
                placeholder="entrer le mot de passe" 
                type='password'
@@ -39,13 +39,13 @@ export default function RegisterScreen(){
                />
 
             <TextInput 
-               icon="lock-closed"
+               icon="lock-check"
                label="confirmer le mot de passe"
                placeholder="entrer le mot de passe de confirmation" 
                type='password'
                secure={true}
                />
-               <Button text={'register'} icon={'log-in'}/>
+               <Button text={'register'} icon={'login'}/>
 
                <View style={styles.signinTextContainer}>
                 <Text style={styles.signinText}>
