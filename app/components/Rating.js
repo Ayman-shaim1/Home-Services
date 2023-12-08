@@ -2,9 +2,9 @@ import { View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
 
-export default function Rating({ number }){
+export default function Rating({ number, style }){
     return (
-        <View style={{flexDirection:'row'}}>
+        <View style={[{flexDirection:'row'},{...style}]}>
              {number === 1 ? 
                 <MaterialCommunityIcons color={colors.secondary} name='star' size={16}/> :
                 number === 1.5 ? 

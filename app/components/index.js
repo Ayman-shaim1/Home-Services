@@ -12,7 +12,7 @@ import PackageItem from "./PackageItem";
 import EmployeItem from "./EmployeItem";
 import Rating from "./Rating";
 import Dropdown from "./Dropdown";
-
+import BottomModal from "./BottomModal";
 
 
 
@@ -20,6 +20,7 @@ import Dropdown from "./Dropdown";
 
 
 export {
+    BottomModal,
     Dropdown,
     Rating,
     EmployeItem,

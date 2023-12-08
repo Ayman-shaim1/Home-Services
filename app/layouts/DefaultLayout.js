@@ -11,7 +11,7 @@ export default function DefaultLayout(){
      <Screen>
            {/* <HomeScreen/> */}
            <EmployeListScreen/>
-
+            {/* <RegisterScreen/> */}
      </Screen>
     )
 }

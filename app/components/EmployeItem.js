@@ -1,5 +1,5 @@
 import React from "react";
-import {View , Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View , Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import colors from "../config/colors";
 import Rating from "./Rating";
 
@@ -9,9 +9,11 @@ export default function EmployeItem({ employe }) {
             <View style={styles.wrapper}> 
                 <Image source={employe.image} style={styles.image}/>
                 <View style={styles.info}>
-                    <Text style={styles.name}>{employe.name}</Text>
+                    <Text style={styles.name}>
+                        {employe.name}
+                     </Text>
                     <Text style={styles.price}>{employe.price} per hour</Text>
-                    <Rating number={employe.rating}/>
+                    <Rating number={employe.rating} style={styles.rating}/>
                 </View>
             </View>
         </TouchableOpacity>
@@ -20,7 +22,8 @@ export default function EmployeItem({ employe }) {
 
 const styles = StyleSheet.create({
     container:{
-        marginVertical:10,
+        marginTop:10,
+        marginBottom:20,
         paddingBottom:10,
         position:'relative',
         borderRadius:10,
@@ -32,8 +35,8 @@ const styles = StyleSheet.create({
         flexDirection:'row',
     },
     image:{
-        width:60,
-        height:60,
+        width:100,
+        height:120,
         borderRadius:30,
         resizeMode:'cover'
     },
@@ -41,12 +44,13 @@ const styles = StyleSheet.create({
         marginLeft:20,
     },
     name:{
-        fontSize:18,
-        fontWeight:'600',
+        fontSize:20,
+        fontWeight:'700',
+        color:colors.black,
     },
     price:{
-        fontSize:15,
-        fontWeight:'500',
+        fontSize:16,
+        fontWeight:'600',
         color:colors.gray
     },
     activities:{
@@ -59,5 +63,8 @@ const styles = StyleSheet.create({
     btn:{
         marginRight:5,
         width:160,
+    },
+    rating:{
+       marginTop:15,
     }
 })

@@ -4,6 +4,7 @@ import colors from "../config/colors";
 import { Camera } from 'expo-camera';
 import * as ExpoImagePicker from 'expo-image-picker';
 import { Ionicons } from '@expo/vector-icons';
+import CloseButton from "./CloseButton";
 
 export default function ImagePicker({ label }){
     const [hasCameraPermission, setHasCameraPermission] = useState(null);
@@ -46,9 +47,7 @@ export default function ImagePicker({ label }){
             <View style={styles.container}>
             {image ?
                 <View style={styles.imageContainer}>
-                    <TouchableOpacity style={styles.btnClose} onPress={() => setImage(null)}>
-                        <Ionicons name="close" size={30} color={colors.lightGray}/>
-                    </TouchableOpacity>
+                    <CloseButton onPress={() => setImage(null)} style={styles.btnClose} color={colors.white}/>
                     <Image
                         source={{ uri: image }}
                         style={styles.image} />

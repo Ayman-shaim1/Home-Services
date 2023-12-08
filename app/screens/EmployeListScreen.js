@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View,  FlatList, Modal, TouchableOpacity } from "react-native";
-import { Button, Diviser,  EmployeItem,  Heading,  TextInput } from "../components";
+import { BottomModal, Button, Diviser,  EmployeItem,  Heading,  TextInput } from "../components";
 import colors from "../config/colors";
-import {MaterialCommunityIcons} from "@expo/vector-icons";
 
 const EMPLOYES = [
     {
@@ -41,19 +40,15 @@ export default function EmployeListScreen(){
 
     return(
         <View style={styles.container}>
-            <Heading as="heading4" text={"Service"} style={{marginBottom:-10,}}/>
+            <Heading as="heading4" text={"Service"} style={{ marginBottom:-10 }}/>
             <Heading as="heading6" text={"Jardinage"} color="gray"/>
             <TextInput value={'xxx avenue xxx rue xxx'} icon={'map-marker'}/>
             <Button text={'filtrer'} icon={'filter'} color="primary" onPress={() =>  setShowFilterModal(true)}/>
             <Button text={'annuler le filtrer'} icon={'filter-off'} color="gray"/>
-            <Modal visible={showFilterModal} style={styles.modal}  animationType="slide" transparent={true}>
-                <View style={styles.filterModal}>
-                    <TouchableOpacity style={styles.closebutton} onPress={() => setShowFilterModal(false)}>
-                        <MaterialCommunityIcons name="close" size={24}/>
-                    </TouchableOpacity>
-                </View>
-            </Modal>
-            {/* <Diviser/> */}
+            <BottomModal visible={showFilterModal} onClose={() => setShowFilterModal(false)}>
+                <Heading as="heading6" text={'Chercher avec filtre'}/>
+                
+            </BottomModal>
             <FlatList
                 data={EMPLOYES}
                 keyExtractor={(item) => item.id}
@@ -67,7 +62,6 @@ export default function EmployeListScreen(){
 const styles = StyleSheet.create({
     modal:{
         marginTop:'100%',
-        
     },
     filterModal:{
         top:'50%',
