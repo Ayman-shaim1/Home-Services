@@ -1,20 +1,21 @@
 import React, { useState } from "react";
-import { StyleSheet, View,  FlatList, Modal, TouchableOpacity } from "react-native";
-import { BottomModal, Button, Diviser,  EmployeItem,  Heading,  TextInput } from "../components";
+import { StyleSheet, View,  FlatList, Text } from "react-native";
+import { BottomModal, Button,  Dropdown,  EmployeItem,  Heading,  Label,  TextInput } from "../components";
+import Slider from '@react-native-community/slider';
 import colors from "../config/colors";
 
 const EMPLOYES = [
     {
         id:1,
         name:'Jhon Doe',
-        price:100,
+        price:100.50,
         rating:4.5,
         image:require('../assets/emp1.jpeg')
     },
     {
         id:2,
         name:'Steve Smith',
-        price:200,
+        price:200.50,
         rating:5,
         image:require('../assets/emp2.jpeg')
     },
@@ -40,15 +41,23 @@ export default function EmployeListScreen(){
 
     return(
         <View style={styles.container}>
-            <Heading as="heading4" text={"Service"} style={{ marginBottom:-10 }}/>
-            <Heading as="heading6" text={"Jardinage"} color="gray"/>
+            <Heading as="heading3" text={"Service"} style={{ marginBottom:-10 }}/>
+            <Heading as="heading5" text={"Jardinage"} color="gray"/>
             <TextInput value={'xxx avenue xxx rue xxx'} icon={'map-marker'}/>
             <Button text={'filtrer'} icon={'filter'} color="primary" onPress={() =>  setShowFilterModal(true)}/>
-            <Button text={'annuler le filtrer'} icon={'filter-off'} color="gray"/>
             <BottomModal visible={showFilterModal} onClose={() => setShowFilterModal(false)}>
-                <Heading as="heading6" text={'Chercher avec filtre'}/>
-                
-            </BottomModal>
+                <Heading as="heading5" text={'Chercher avec filtre'}/>
+                <Label text={"Filtrer par prix :"} />
+                <Slider
+                    style={{ width: '100%' }}
+                    minimumValue={0}
+                    maximumValue={100}
+                    thumbTintColor={colors.primary}
+                    minimumTrackTintColor={colors.primary}
+                    maximumTrackTintColor={colors.secondary}
+                />
+                <Dropdown/>
+            </BottomModal>  
             <FlatList
                 data={EMPLOYES}
                 keyExtractor={(item) => item.id}
@@ -60,24 +69,5 @@ export default function EmployeListScreen(){
 }
 
 const styles = StyleSheet.create({
-    modal:{
-        marginTop:'100%',
-    },
-    filterModal:{
-        top:'50%',
-        padding:15,
-        height:'100%',
-        backgroundColor:colors.white,
-        borderRadius:20,
-        // Shadow properties for iOS
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.3,
-        shadowRadius: 4,
-        // Elevation property for Android
-        elevation: 20,
-    },
-    closebutton:{
-        alignSelf:'flex-end'
-    }
+   
 })

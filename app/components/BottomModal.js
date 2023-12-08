@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
         backgroundColor:colors.primary,
     },
     modalWrapper:{
-        paddingTop:10,
-        top:'50%',
+        paddingTop:5,
+        top:'45%',
         height:'100%',
         backgroundColor:colors.secondary,
         borderRadius:20,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     modalContent:{
         backgroundColor:colors.white,
         height:'100%',
-        padding:15,
+        padding:10,
         borderRadius:20,
     },
 });

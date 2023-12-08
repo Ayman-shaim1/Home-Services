@@ -13,15 +13,13 @@ import EmployeItem from "./EmployeItem";
 import Rating from "./Rating";
 import Dropdown from "./Dropdown";
 import BottomModal from "./BottomModal";
-
-
-
-
+import Label from "./Label"
 
 
 export {
+    Label,
     BottomModal,
-    Dropdown,
+    Dropdown as Dropdown,
     Rating,
     EmployeItem,
     ImagePicker,

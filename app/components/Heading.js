@@ -12,27 +12,27 @@ const styles = StyleSheet.create({
         marginVertical:10,
     },
     heading1: {
-      fontSize: 50,
+      fontSize: 55,
       fontWeight: 'bold',
     },
     heading2: {
-      fontSize:42,
+      fontSize:45,
       fontWeight: 'bold',
     },
     heading3: {
-      fontSize: 36,
+      fontSize: 39,
       fontWeight: 'bold',
     },
     heading4: {
-        fontSize: 30,
+        fontSize: 32,
         fontWeight: 'bold',
     },
     heading5: {
-        fontSize: 24,
+        fontSize: 26,
         fontWeight: 'bold',
     },
     heading6: {
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: 'bold',
     },
   });

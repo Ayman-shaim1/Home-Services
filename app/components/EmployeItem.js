@@ -12,7 +12,9 @@ export default function EmployeItem({ employe }) {
                     <Text style={styles.name}>
                         {employe.name}
                      </Text>
-                    <Text style={styles.price}>{employe.price} per hour</Text>
+                    <Text style={styles.price}>
+                        {employe.price} MAD par heure
+                    </Text>
                     <Rating number={employe.rating} style={styles.rating}/>
                 </View>
             </View>
@@ -22,35 +24,33 @@ export default function EmployeItem({ employe }) {
 
 const styles = StyleSheet.create({
     container:{
-        marginTop:10,
         marginBottom:20,
-        paddingBottom:10,
         position:'relative',
         borderRadius:10,
-        padding:10,
-        borderBottomColor:colors.gray,
+        paddingVertical:12,
+        borderBottomColor:'lightgray',
         borderBottomWidth:1,
     },
     wrapper:{
         flexDirection:'row',
     },
     image:{
-        width:100,
-        height:120,
-        borderRadius:30,
+        width:80,
+        height:80,
+        borderRadius:15,
         resizeMode:'cover'
     },
     info:{
-        marginLeft:20,
+        marginLeft:15,
     },
     name:{
-        fontSize:20,
-        fontWeight:'700',
+        fontSize:21,
+        fontWeight:'800',
         color:colors.black,
     },
     price:{
-        fontSize:16,
-        fontWeight:'600',
+        fontSize:14,
+        fontWeight:'700',
         color:colors.gray
     },
     activities:{
@@ -64,7 +64,5 @@ const styles = StyleSheet.create({
         marginRight:5,
         width:160,
     },
-    rating:{
-       marginTop:15,
-    }
+    
 })
