@@ -36,27 +36,41 @@ const EMPLOYES = [
 ];
 
 
-export default function EmployeListScreen(){
-    const [showFilterModal,setShowFilterModal] = useState(false);
+const data = [
+    { label: 'Item 1', value: '1' },
+    { label: 'Item 2', value: '2' },
+    { label: 'Item 3', value: '3' },
+    { label: 'Item 4', value: '4' },
+    { label: 'Item 5', value: '5' },
+    { label: 'Item 6', value: '6' },
+    { label: 'Item 7', value: '7' },
+    { label: 'Item 8', value: '8' },
+  ];
 
+export default function EmployeListScreen(){
+    const [ showFilterModal,setShowFilterModal ] = useState(false);
+    const [ note, setNote ] = useState(false);
+    const [maxprix,setMaxprix] = useState(100)
     return(
         <View style={styles.container}>
             <Heading as="heading3" text={"Service"} style={{ marginBottom:-10 }}/>
             <Heading as="heading5" text={"Jardinage"} color="gray"/>
-            <TextInput value={'xxx avenue xxx rue xxx'} icon={'map-marker'}/>
+            <TextInput value={'xxx avenue xxx rue xxx'} icon={'map-marker'} />
             <Button text={'filtrer'} icon={'filter'} color="primary" onPress={() =>  setShowFilterModal(true)}/>
             <BottomModal visible={showFilterModal} onClose={() => setShowFilterModal(false)}>
                 <Heading as="heading5" text={'Chercher avec filtre'}/>
                 <Label text={"Filtrer par prix :"} />
                 <Slider
                     style={{ width: '100%' }}
-                    minimumValue={0}
-                    maximumValue={100}
+                    minimumValue={100}
+                    maximumValue={1000}
                     thumbTintColor={colors.primary}
                     minimumTrackTintColor={colors.primary}
-                    maximumTrackTintColor={colors.secondary}
+                    value={maxprix}
+                    onValueChange={(value) => setMaxprix(value)}
                 />
-                <Dropdown/>
+                <Text style={{marginBottom:20}}>prix max :{maxprix.toFixed(0)}</Text>
+                <Dropdown maxHeight={150} label={"Filtrer par note :"} data={data} value={note} setValue={setNote}/>
             </BottomModal>  
             <FlatList
                 data={EMPLOYES}

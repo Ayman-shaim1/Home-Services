@@ -8,6 +8,8 @@ export default function Label({ text, color}){
 const styles = StyleSheet.create({
     label:{
         fontSize:16,
-        fontWeight:'400'
+        fontWeight:'400',
+        marginStart:3,
+        marginBottom:5,
     }
 })

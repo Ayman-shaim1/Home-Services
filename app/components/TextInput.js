@@ -2,17 +2,18 @@ import React from "react";
 import { StyleSheet,TextInput as RNTextInput, View, Text} from "react-native";
 import colors from "../config/colors";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Label from "./Label";
 
 
 export default function TextInput({ placeholder,label,icon, keyboardType, secure = false , style,value}){
     return (
         <View style={[styles.container,style]}> 
-            {label && <Text style={styles.label}>{label}</Text>}
+            {label && <Label style={styles.label}>{label}</Label>}
             <View style={styles.inputContainer}>
                 {icon && <MaterialCommunityIcons  style={styles.icon} name={icon} size={18} color={colors.gray}/>}
                 <RNTextInput
                     style={[styles.input,{
-                        paddingLeft:icon ? 40 : 20
+                        paddingLeft:icon ? 40 :20
                     }]}
                     keyboardType={keyboardType}
                     placeholder={placeholder}
