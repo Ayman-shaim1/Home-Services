@@ -14,9 +14,11 @@ import Rating from "./Rating";
 import Dropdown from "./Dropdown";
 import BottomModal from "./BottomModal";
 import Label from "./Label"
+import RatingPicker from "./RatingPicker";
 
 
 export {
+    RatingPicker,
     Label,
     BottomModal,
     Dropdown as Dropdown,

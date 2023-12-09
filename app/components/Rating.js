@@ -6,59 +6,52 @@ export default function Rating({ number, style }){
     return (
         <View style={[{flexDirection:'row'},{...style}]}>
              {number === 1 ? 
-                <MaterialCommunityIcons color={colors.secondary} name='star' size={16}/> :
-                number === 1.5 ? 
-                <>
-                    <MaterialCommunityIcons color={colors.secondary} name='star' size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary}  name="star-half-full" size={16} />
-                </> :
+               ( 
+                    <>
+                        <MaterialCommunityIcons color={colors.secondary} name='star' size={24}/> 
+                        <MaterialCommunityIcons color={colors.secondary} name="star-outline" size={24}/>
+                        
+                        <MaterialCommunityIcons color={colors.secondary} name="star-outline" size={24}/>
+                        <MaterialCommunityIcons color={colors.secondary} name="star-outline" size={24}/>
+                        <MaterialCommunityIcons color={colors.secondary} name="star-outline" size={24}/>
+                    </>
+               )
+               :
                 number === 2 ? 
                 <>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                </> :
-                number === 2.5 ?
-                <>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary}  name="star-half-full" size={16} />
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star-outline" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star-outline" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star-outline" size={24}/>
 
                 </> :
+               
                 number === 3 ? 
                 <>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star-outline" size={24}/>               
+                    <MaterialCommunityIcons color={colors.secondary} name="star-outline" size={24}/>
                 </> :
-                number === 3.5 ?
-                <>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary}  name="star-half-full" size={16} />
-                </> :
+               
                 number === 4 ?
                 <>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star-outline" size={24}/>
                 </> :
-                number === 4.5 ?
-                <>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary}  name="star-half-full" size={16} />
-                </> :
+               
                 number === 5 &&
                 <>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
-                    <MaterialCommunityIcons color={colors.secondary} name="star" size={16}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
+                    <MaterialCommunityIcons color={colors.secondary} name="star" size={24}/>
                 </>
             }
         </View>

@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
         position:'relative',
         borderRadius:10,
         paddingVertical:12,
-        borderBottomColor:'lightgray',
-        borderBottomWidth:1,
+        // borderBottomColor:'lightgray',
+        // borderBottomWidth:1,
     },
     wrapper:{
         flexDirection:'row',

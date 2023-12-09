@@ -16,8 +16,7 @@ import Label from './Label';
 //   { label: 'Item 8', value: '8' },
 // ];
 
-const Dropdown = ({ icon, label ,value,setValue, data,maxHeight = 200 }) => {
-  const [isFocus, setIsFocus] = useState(false);
+const Dropdown = ({ icon, label ,value,setValue, data,maxHeight = 200,placeholder }) => {
 
   return (
     <View style={styles.container}>
@@ -37,13 +36,10 @@ const Dropdown = ({ icon, label ,value,setValue, data,maxHeight = 200 }) => {
                 maxHeight={maxHeight}
                 labelField="label"
                 valueField="value"
-                // placeholder={'Select item'}
+                placeholder={placeholder}
                 value={value}
-                onFocus={() => setIsFocus(true)}
-                onBlur={() => setIsFocus(false)}
                 onChange={item => {
                     setValue(item.value);
-                    setIsFocus(false);
                 }}
             />
         </View>
@@ -56,7 +52,7 @@ export default Dropdown;
 
 const styles = StyleSheet.create({
     container:{
-        marginVertical:7, 
+        marginTop:7,
     },
     dropdownContainer:{
         position:'relative',
@@ -74,7 +70,7 @@ const styles = StyleSheet.create({
         marginBottom:5,
     },
     dropdown:{
-        paddingVertical:13,
+        paddingVertical:12,
         paddingRight:24,
         backgroundColor:colors.lightGray,
         borderRadius:10,

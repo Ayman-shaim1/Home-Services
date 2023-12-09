@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, View,  FlatList, Text } from "react-native";
-import { BottomModal, Button,  Dropdown,  EmployeItem,  Heading,  Label,  TextInput } from "../components";
+import { BottomModal, Button,  Dropdown,  EmployeItem,  Heading,  Label,  RatingPicker,  TextInput } from "../components";
 import Slider from '@react-native-community/slider';
 import colors from "../config/colors";
 
@@ -9,7 +9,7 @@ const EMPLOYES = [
         id:1,
         name:'Jhon Doe',
         price:100.50,
-        rating:4.5,
+        rating:4,
         image:require('../assets/emp1.jpeg')
     },
     {
@@ -36,25 +36,16 @@ const EMPLOYES = [
 ];
 
 
-const data = [
-    { label: 'Item 1', value: '1' },
-    { label: 'Item 2', value: '2' },
-    { label: 'Item 3', value: '3' },
-    { label: 'Item 4', value: '4' },
-    { label: 'Item 5', value: '5' },
-    { label: 'Item 6', value: '6' },
-    { label: 'Item 7', value: '7' },
-    { label: 'Item 8', value: '8' },
-  ];
 
 export default function EmployeListScreen(){
     const [ showFilterModal,setShowFilterModal ] = useState(false);
-    const [ note, setNote ] = useState(false);
-    const [maxprix,setMaxprix] = useState(100)
+    const [maxprix,setMaxprix] = useState(100);
+    const [startNumber, setStartNumber] = useState(1)
+
     return(
         <View style={styles.container}>
-            <Heading as="heading3" text={"Service"} style={{ marginBottom:-10 }}/>
-            <Heading as="heading5" text={"Jardinage"} color="gray"/>
+            {/* <Heading as="heading3" text={"Service"} style={{ marginBottom:-10 }}/> */}
+            <Heading as="heading3" text={"Jardinage"} color="black"/>
             <TextInput value={'xxx avenue xxx rue xxx'} icon={'map-marker'} />
             <Button text={'filtrer'} icon={'filter'} color="primary" onPress={() =>  setShowFilterModal(true)}/>
             <BottomModal visible={showFilterModal} onClose={() => setShowFilterModal(false)}>
@@ -70,9 +61,20 @@ export default function EmployeListScreen(){
                     onValueChange={(value) => setMaxprix(value)}
                 />
                 <Text style={{marginBottom:20}}>prix max :{maxprix.toFixed(0)}</Text>
-                <Dropdown maxHeight={150} label={"Filtrer par note :"} data={data} value={note} setValue={setNote}/>
+                <RatingPicker
+                    number={startNumber} 
+                    setNumber={setStartNumber}
+                    label={"Filtrer par etoile :"} />
+                 <Text>nombre d'etoile choisie: {startNumber}</Text>
+                 <Button 
+                    text="confirmer" 
+                    style={{ marginTop:40 }} 
+                    color="primary"
+                    icon={'filter-check'}
+                    onPress={() => setShowFilterModal(false)}/>
             </BottomModal>  
             <FlatList
+                style={{ marginTop:20 }}
                 data={EMPLOYES}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item,index }) => <EmployeItem employe={item} index={index}/>}
