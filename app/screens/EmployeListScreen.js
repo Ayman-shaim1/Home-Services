@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, View,  FlatList, Text } from "react-native";
-import { BottomModal, Button,  Dropdown,  EmployeItem,  Heading,  Label,  RatingPicker,  TextInput } from "../components";
+import { BottomModal, Button,  Dropdown,  EmployeItem,  Heading,  Label,  RatingPicker,  Screen,  TextInput } from "../components";
 import Slider from '@react-native-community/slider';
 import colors from "../config/colors";
 
@@ -15,7 +15,7 @@ const EMPLOYES = [
     {
         id:2,
         name:'Steve Smith',
-        price:200.50,
+        price:200.50, 
         rating:5,
         image:require('../assets/emp2.jpeg')
     },
@@ -43,7 +43,7 @@ export default function EmployeListScreen(){
     const [startNumber, setStartNumber] = useState(1)
 
     return(
-        <View style={styles.container}>
+        <Screen style={styles.container}>
             {/* <Heading as="heading3" text={"Service"} style={{ marginBottom:-10 }}/> */}
             <Heading as="heading3" text={"Jardinage"} color="black"/>
             <TextInput value={'xxx avenue xxx rue xxx'} icon={'map-marker'} />
@@ -80,7 +80,7 @@ export default function EmployeListScreen(){
                 renderItem={({ item,index }) => <EmployeItem employe={item} index={index}/>}
                 scrollEnabled={false}
               />
-        </View>
+        </Screen>
     )
 }
 

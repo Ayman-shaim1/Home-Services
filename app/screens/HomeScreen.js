@@ -1,13 +1,13 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { ServicesContainer, Searchbar } from "../components";
+import { ServicesContainer, Searchbar, Screen } from "../components";
 
 export default function HomeScreen()  {
     return (
-       <View>
+       <Screen>
          {/* <Searchbar/> */}
          <ServicesContainer/>
-       </View>
+       </Screen>
     )
 }
 

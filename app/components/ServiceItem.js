@@ -13,10 +13,11 @@ export default function ServiceItem ({ service,index }) {
           useNativeDriver: false,
         }).start();
       };
-  const translateY = animationValue.interpolate({
-    inputRange: [0, 1],
-    outputRange: [100, 0], // You can customize the animation as needed
-  });
+      
+      const translateX = animationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [100, 0], // You can customize the animation as needed
+      });
 
  
     useEffect(() => {
@@ -26,7 +27,7 @@ export default function ServiceItem ({ service,index }) {
     return (
         <Animated.View
           style={{
-              transform: [{ translateY }],
+              transform: [{ translateX }],
             opacity: animationValue,
           }} 
         >
