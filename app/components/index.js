@@ -15,9 +15,13 @@ import Dropdown from "./Dropdown";
 import BottomModal from "./BottomModal";
 import Label from "./Label"
 import RatingPicker from "./RatingPicker";
+import JobHistoryContainer from "./JobHistoryContainer";
+import GoBackButton from "./GoBackButton"
 
 
 export {
+    GoBackButton,
+    JobHistoryContainer,
     RatingPicker,
     Label,
     BottomModal,

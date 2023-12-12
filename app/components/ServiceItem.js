@@ -2,7 +2,7 @@ import React,{ useRef,useEffect } from "react";
 import { Text, Image, StyleSheet, TouchableOpacity ,Animated} from "react-native";
 import colors from "../config/colors";
 
-export default function ServiceItem ({ service,index }) {
+export default function ServiceItem ({ navigation,service,index }) {
     const animationValue = useRef(new Animated.Value(0)).current;
 
     const animateItem = () => {
@@ -31,7 +31,7 @@ export default function ServiceItem ({ service,index }) {
             opacity: animationValue,
           }} 
         >
-          <TouchableOpacity style={styles.service}>
+          <TouchableOpacity style={styles.service} onPress={() => navigation.navigate('EmployeList')}>
                 <Image source={service.icon} style={styles.image}/>
                 <Text style={styles.text}>{service.name}</Text>
             </TouchableOpacity>

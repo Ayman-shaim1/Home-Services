@@ -44,7 +44,7 @@ const SERVICES = [
 ];
 
 
-export default function ServicesContainer (){
+export default function ServicesContainer ({ navigation }){
     return (
         <View style={styles.container}>
           <Heading text="Services" as="heading5"/>
@@ -57,7 +57,7 @@ export default function ServicesContainer (){
               <FlatList
                 data={SERVICES}
                 keyExtractor={(item) => item.id}
-                renderItem={({ item,index }) => <ServiceItem service={item} index={index}/>}
+                renderItem={({ item,index }) => <ServiceItem navigation={navigation} service={item} index={index}/>}
                 numColumns={3}
                 scrollEnabled={false}
               />

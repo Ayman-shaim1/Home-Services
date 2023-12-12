@@ -3,7 +3,7 @@ import { View , Text, StyleSheet, Image, TouchableOpacity, Animated } from "reac
 import colors from "../config/colors";
 import Rating from "./Rating";
 
-export default function EmployeItem({ employe ,index}) {
+export default function EmployeItem({ navigation, employe ,index}) {
 
     const animationValue = useRef(new Animated.Value(0)).current;
     const animateItem = () => {
@@ -32,7 +32,7 @@ export default function EmployeItem({ employe ,index}) {
                 opacity: animationValue,
             }} 
         >
-            <TouchableOpacity style={styles.container}>
+            <TouchableOpacity style={styles.container} onPress={() => navigation.navigate("EmployeDetails")}>
                 <View style={styles.wrapper}> 
                     <Image source={employe.image} style={styles.image}/>
                     <View style={styles.info}>

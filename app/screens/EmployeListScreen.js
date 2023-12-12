@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { StyleSheet, View,  FlatList, Text } from "react-native";
-import { BottomModal, Button,  Dropdown,  EmployeItem,  Heading,  Label,  RatingPicker,  Screen,  TextInput } from "../components";
+import { StyleSheet,  FlatList, Text, TouchableOpacity } from "react-native";
+import { BottomModal, Button,    EmployeItem,  GoBackButton,  Heading,  Label,  RatingPicker,  Screen,  TextInput } from "../components";
 import Slider from '@react-native-community/slider';
 import colors from "../config/colors";
 
@@ -35,15 +35,14 @@ const EMPLOYES = [
     }
 ];
 
-
-
-export default function EmployeListScreen(){
+export default function EmployeListScreen({ navigation }){
     const [ showFilterModal,setShowFilterModal ] = useState(false);
     const [maxprix,setMaxprix] = useState(100);
     const [startNumber, setStartNumber] = useState(1)
 
     return(
         <Screen style={styles.container}>
+           <GoBackButton navigation={navigation}/>
             {/* <Heading as="heading3" text={"Service"} style={{ marginBottom:-10 }}/> */}
             <Heading as="heading3" text={"Jardinage"} color="black"/>
             <TextInput value={'xxx avenue xxx rue xxx'} icon={'map-marker'} />
@@ -77,7 +76,7 @@ export default function EmployeListScreen(){
                 style={{ marginTop:20 }}
                 data={EMPLOYES}
                 keyExtractor={(item) => item.id}
-                renderItem={({ item,index }) => <EmployeItem employe={item} index={index}/>}
+                renderItem={({ item,index }) => <EmployeItem navigation={navigation} employe={item} index={index}/>}
                 scrollEnabled={false}
               />
         </Screen>
