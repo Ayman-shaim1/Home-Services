@@ -28,7 +28,7 @@ export default function LoginNavigator(){
                 />
                 <Stack.Screen 
                    options={stackOptions}
-                    name="Register" 
+                    name="register" 
                     component={RegisterScreen} 
                 />
         </Stack.Navigator>

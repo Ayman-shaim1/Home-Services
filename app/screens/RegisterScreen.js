@@ -1,13 +1,14 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import LogoImage from "../assets/service.png";
-import { Button, Diviser, Heading,ImagePicker,Screen,TextInput } from "../components";
+import { Button, Diviser, GoBackButton, Heading,ImagePicker,Screen,TextInput } from "../components";
 import colors from "../config/colors";
 
 
-export default function RegisterScreen(){
+export default function RegisterScreen({navigation}){
     return (
         <Screen>
+             <GoBackButton navigation={navigation}/>
            <View style={styles.container}>
                 <Image source={LogoImage} style={styles.logo}/>
                 <Heading text={"Sign up"} as="heading5" /> 

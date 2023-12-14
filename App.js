@@ -5,8 +5,7 @@ import NavigationContainer from "./app/navigation/NavigationContainer";
 export default function App() {
   return (
       <NavigationContainer>
-        <LoginNavigator/>
+        <FindEmployeNavigator/>
       </NavigationContainer>
-    //  <DefaultLayout/>
   );
 }
