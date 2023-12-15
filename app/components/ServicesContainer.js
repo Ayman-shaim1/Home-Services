@@ -70,14 +70,14 @@ export default function ServicesContainer ({ navigation }){
 const styles = StyleSheet.create({
   container:{
     backgroundColor:colors.white,
-    marginTop:10,
+    // marginTop:10,
     paddingVertical:10,
     marginVertical:10,
     borderRadius:10,
   },
   listContainer:{
     alignItems:'center',
-    marginTop:15,
+    // marginTop:15,
     margin:10,
     paddingHorizontal:5,
     borderRadius:10,

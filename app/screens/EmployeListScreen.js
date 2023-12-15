@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { StyleSheet,  FlatList, Text, TouchableOpacity } from "react-native";
-import { BottomModal, Button,    EmployeItem,  GoBackButton,  Heading,  Label,  RatingPicker,  Screen,  TextInput } from "../components";
-import Slider from '@react-native-community/slider';
-import colors from "../config/colors";
+import React from "react";
+import { StyleSheet,  FlatList } from "react-native";
+import {  EmployeItem,   Screen,  Searchbar,   } from "../components";
+
 
 const EMPLOYES = [
     {
@@ -36,50 +35,19 @@ const EMPLOYES = [
 ];
 
 export default function EmployeListScreen({ navigation }){
-    const [ showFilterModal,setShowFilterModal ] = useState(false);
-    const [maxprix,setMaxprix] = useState(100);
-    const [startNumber, setStartNumber] = useState(1)
-
     return(
-        <Screen style={styles.container}>
-           <GoBackButton navigation={navigation}/>
-            {/* <Heading as="heading3" text={"Service"} style={{ marginBottom:-10 }}/> */}
-            <Heading as="heading3" text={"Jardinage"} color="black"/>
-            <TextInput value={'xxx avenue xxx rue xxx'} icon={'map-marker'} />
-            <Button text={'filtrer'} icon={'filter'} color="primary" onPress={() =>  setShowFilterModal(true)}/>
-            <BottomModal visible={showFilterModal} onClose={() => setShowFilterModal(false)}>
-                <Heading as="heading5" text={'Chercher avec filtre'}/>
-                <Label text={"Filtrer par prix :"} />
-                <Slider
-                    style={{ width: '100%' }}
-                    minimumValue={100}
-                    maximumValue={1000}
-                    thumbTintColor={colors.primary}
-                    minimumTrackTintColor={colors.primary}
-                    value={maxprix}
-                    onValueChange={(value) => setMaxprix(value)}
+        <> 
+           <Searchbar showFilterBtn showGoBackBtn navigation={navigation}/>
+            <Screen>
+                <FlatList
+                    style={{ marginTop:20 }}
+                    data={EMPLOYES}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item,index }) => <EmployeItem navigation={navigation} employe={item} index={index}/>}
+                    scrollEnabled={false}
                 />
-                <Text style={{marginBottom:20}}>prix max :{maxprix.toFixed(0)}</Text>
-                <RatingPicker
-                    number={startNumber} 
-                    setNumber={setStartNumber}
-                    label={"Filtrer par etoile :"} />
-                 <Text>nombre d'etoile choisie: {startNumber}</Text>
-                 <Button 
-                    text="confirmer" 
-                    style={{ marginTop:40 }} 
-                    color="primary"
-                    icon={'filter-check'}
-                    onPress={() => setShowFilterModal(false)}/>
-            </BottomModal>  
-            <FlatList
-                style={{ marginTop:20 }}
-                data={EMPLOYES}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item,index }) => <EmployeItem navigation={navigation} employe={item} index={index}/>}
-                scrollEnabled={false}
-              />
-        </Screen>
+            </Screen>
+        </>
     )
 }
 

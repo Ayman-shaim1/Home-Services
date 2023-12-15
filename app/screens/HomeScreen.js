@@ -4,10 +4,12 @@ import { ServicesContainer, Searchbar, Screen } from "../components";
 
 export default function HomeScreen({navigation})  {
     return (
-       <Screen>
-         {/* <Searchbar/> */}
-         <ServicesContainer navigation={navigation}/>
-       </Screen>
+       <>
+         <Searchbar/>
+         <Screen>
+           <ServicesContainer navigation={navigation}/>
+         </Screen>
+       </>
     )
 }
 

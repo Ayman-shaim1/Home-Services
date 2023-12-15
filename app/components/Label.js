@@ -11,5 +11,6 @@ const styles = StyleSheet.create({
         fontWeight:'400',
         marginStart:3,
         marginBottom:5,
+        textAlign:'justify'
     }
 })
