@@ -1,11 +1,12 @@
-import FindEmployeNavigator from "./app/navigation/FindEmployeNavigator";
+import ClientNavigator from "./app/navigation/ClientNavigator";
 import LoginNavigator from "./app/navigation/LoginNavigator";
 import NavigationContainer from "./app/navigation/NavigationContainer";
+import AppNavigator from "./app/navigation/AppNavigator";
 
 export default function App() {
   return (
       <NavigationContainer>
-        <FindEmployeNavigator/>
+        <AppNavigator/>
       </NavigationContainer>
   );
 }

@@ -8,7 +8,7 @@ import Label from "./Label";
 export default function TextInput({ placeholder,label,icon, keyboardType, secure = false , style,value}){
     return (
         <View style={[styles.container,style]}> 
-            {label && <Label style={styles.label}>{label}</Label>}
+            {label && <Label style={styles.label} color={"black"} text={label}/>}
             <View style={styles.inputContainer}>
                 {icon && <MaterialCommunityIcons  style={styles.icon} name={icon} size={18} color={colors.gray}/>}
                 <RNTextInput
@@ -40,11 +40,7 @@ const styles = StyleSheet.create({
        top:'35%',
        left:'4%'
     },
-    label:{
-        fontSize:16,
-        fontWeight:'bold',
-        marginBottom:5,
-    },
+    
     input:{
         paddingVertical:20,
         paddingRight:24,

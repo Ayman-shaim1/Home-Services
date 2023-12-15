@@ -37,8 +37,8 @@ export default function BottomModal({ visible = false , children, onClose }){
                         { transform: [{ translateY: Math.max(dragY, 0) }] },
                 ]}
                 {...panResponder.panHandlers}>
-                
                     <View style={styles.modalContent}>
+                       <View style={styles.line}></View>
                         <CloseButton style={styles.btnClose} onPress={onClose}/>
                         {children}
                     </View>
@@ -73,4 +73,11 @@ const styles = StyleSheet.create({
         padding:10,
         borderRadius:20,
     },
+    line:{
+      height:4,
+      width:70,
+      backgroundColor:colors.gray,
+      alignSelf:'center',
+      borderRadius:10
+    }
 });

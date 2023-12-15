@@ -10,7 +10,7 @@ export default function GoBackButton ({navigation}){
                 size={30}
                 color={colors.gray}
                 />
-                <Text style={styles.text}>retourner</Text>
+                {/* <Text style={styles.text}>retourner</Text> */}
         </TouchableOpacity>
     );
 }

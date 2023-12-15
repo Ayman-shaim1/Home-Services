@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import LogoImage from "../assets/service.png";
-import { Button, Diviser, GoBackButton, Heading,ImagePicker,Screen,TextInput } from "../components";
+import { Button,  GoBackButton, Heading,ImagePicker,Screen,TextInput } from "../components";
 import colors from "../config/colors";
 
 
@@ -18,7 +18,9 @@ export default function RegisterScreen({navigation}){
                     as={'heading6'} 
                     color={'gray'} />
             </View>
-            <ImagePicker label={"image"}/>
+           <View style={{alignItems:'cente'}}>
+                 <ImagePicker label={"image"}/>
+           </View>
             <TextInput 
                 label="nom"
                 placeholder="entrer votre nom "
@@ -30,6 +32,13 @@ export default function RegisterScreen({navigation}){
                 placeholder="entrer un email"
                 icon="email"
                />
+
+            <TextInput 
+                label="Telephone"
+                placeholder="entrer un numero de telephone"
+                icon="phone"
+               />
+
 
             <TextInput 
                icon="lock"
@@ -52,7 +61,7 @@ export default function RegisterScreen({navigation}){
                 <Text style={styles.signinText}>
                     aleady have an account 
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate("login")}>
                         <Text style={[styles.signinText,styles.signinTextBtn]}>sign in</Text>
                 </TouchableOpacity>
             </View>
@@ -84,6 +93,7 @@ const styles = StyleSheet.create({
     },
     signinTextBtn:{
         marginLeft:3,
-        color:colors.secondary
+        color:colors.secondary,
+        marginBottom:40,
     }
 });

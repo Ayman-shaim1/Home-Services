@@ -14,7 +14,7 @@ const stackOptions = {
     }
 }
 
-export default function FindEmployeNavigator(){
+export default function ClientNavigator(){
     return ( 
         <Stack.Navigator
              options={stackOptions}>
