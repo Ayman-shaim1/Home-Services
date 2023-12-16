@@ -1,10 +1,12 @@
-import { useRef,useEffect } from "react"
-import { StyleSheet, View,Animated } from "react-native"
+import { useRef,useEffect, useState } from "react"
+import { StyleSheet, View,Animated, TouchableOpacity } from "react-native"
 import Heading from "./Heading"
 import Rating from "./Rating"
 import Label from "./Label"
+import BottomModal from "./BottomModal"
 
 export default function JobHistoryItem({index}) {
+    const [showBottomModal,setShowBottomModal] = useState(false);
 
     const animationValue = useRef(new Animated.Value(0)).current;
     const animateItem = () => {
@@ -32,21 +34,19 @@ export default function JobHistoryItem({index}) {
                 opacity: animationValue,
             }} 
         >
-        <View style={styles.jobHistoryItem}>
-                <View style={styles.jobHistoryItemTextcontainer}>
-                        <View style={styles.jobHistoryItemTextInfo}>
-                            <Heading as="heading5" style={styles.textDuration} text={"Intitule de travaille"}/>
-                            <Heading as="heading6" style={[styles.textDuration,{marginTop:10,}]} text={"De 2023-06-06 a 10:30 "} color={"gray"}/>
-                            <Heading as="heading6" style={styles.textDuration}  text={"jusqu'a"} color="gray"/>
-                            <Heading as="heading6" style={[styles.textDuration,{marginBottom:10}]} text="2023-06-06 a 13:30" color="gray"/>
-                        </View>
-                        <View style={styles.priceText}>
-                            <Label as="heading6" text="100 MAD par heure" color="gray"/>
-                            <Label as="heading6" text="400 MAD en total" color="gray"/>
-                        </View>
-                </View>
+        <TouchableOpacity onPress={() => setShowBottomModal(true)} style={styles.jobHistoryItem}>
+            <View style={styles.jobHistoryItemTextInfo}>
+                <Label as="heading5" style={styles.textDuration} text={"Intitule de travaille"}/>
                 <Rating number={5}/>
-        </View> 
+            </View>
+            <View>
+                <Label text={'Lorem ipsum dolor sit amet ...'} color={"gray"}/>
+            </View>
+        </TouchableOpacity> 
+
+        <BottomModal visible={showBottomModal} onClose={()=> setShowBottomModal(false)}>
+
+        </BottomModal>
     </Animated.View>
        
     )
@@ -56,11 +56,11 @@ const styles = StyleSheet.create({
     jobHistoryItem:{
         marginVertical:20,
     },
-    jobHistoryItemTextcontainer:{
-        flexDirection:'row',
-    },
+
     jobHistoryItemTextInfo:{
-        width:'62%'
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between'
     },
     textDuration:{
         marginVertical:0,

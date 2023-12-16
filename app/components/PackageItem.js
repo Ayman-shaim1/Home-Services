@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
         width:300,
         height:150,
         borderRadius:10,
-        padding:1,
         zIndex:100,
         alignItems:'center',
         position:'relative',
@@ -48,6 +47,5 @@ const styles = StyleSheet.create({
     title:{
         color:colors.white,
         fontWeight:'bold',
-        
     }
 })

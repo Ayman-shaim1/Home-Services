@@ -4,25 +4,25 @@ import colors from "../config/colors";
 import Rating from "./Rating";
 
 export default function EmployeItem({ navigation, employe ,index}) {
-
+    
     const animationValue = useRef(new Animated.Value(0)).current;
     const animateItem = () => {
         Animated.timing(animationValue, {
           toValue: 1,
           duration: 500,
-          delay: index * 200, // Adjust the delay for staggered animation
+          delay: index * 200, 
           useNativeDriver: false,
         }).start();
       };
       
     const translateY = animationValue.interpolate({
         inputRange: [0, 1],
-        outputRange: [100, 0], // You can customize the animation as needed
+        outputRange: [100, 0], 
     });
 
  
     useEffect(() => {
-      animateItem(1); // Trigger animation when the component mounts
+      animateItem(1); 
     }, []);
 
     return (
@@ -67,28 +67,20 @@ const styles = StyleSheet.create({
         resizeMode:'cover'
     },
     info:{
-        marginLeft:15,
+        marginLeft:10,
     },
     name:{
         fontSize:21,
         fontWeight:'800',
         color:colors.black,
+        fontFamily:'Lato-Black',
     },
     price:{
         fontSize:14,
         fontWeight:'700',
-        color:colors.gray
+        color:colors.gray,
+        fontFamily:'Lato-Regular',
     },
-    activities:{
-        marginLeft:50,
-        alignItems:'center',
-        justifyContent:'center',
-        flexDirection:'row',
-        right:10,
-    },
-    btn:{
-        marginRight:5,
-        width:160,
-    },
+   
     
 })

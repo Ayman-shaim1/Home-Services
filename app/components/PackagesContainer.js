@@ -2,12 +2,13 @@ import React from "react";
 import { StyleSheet, View , ScrollView} from "react-native";
 import colors from "../config/colors";
 import Heading from "./Heading";
+import PackageItem from "./PackageItem";
 
 const PACKAGES = [
     {
         id:1,
         image:require("../assets/jardinage.jpeg"),
-        title:'jardinage & menage '
+        title:'jardinage & menage'
     },
     {
         id:2,
@@ -20,14 +21,7 @@ const PACKAGES = [
 export default function PackagesContainer (){
     return (
         <View style={styles.container}>
-        <Heading text="Paquets" as="heading5"/>
-        
-        <Heading 
-          style={styles.headingText1}
-          text="Un paquet est un ensemble de services. Veuillez choisir l'un de nos paquets." 
-          as="heading6" 
-          color="gray"/>        
-          
+        <Heading text="Paquets" as="heading5"/>          
         <ScrollView 
             style={styles.listContainer}
             horizontal 
@@ -35,7 +29,7 @@ export default function PackagesContainer (){
             showsHorizontalScrollIndicator={false} 
             >
             {PACKAGES.map(item => (
-                <PackageItem package={item}/>
+                <PackageItem key={item.id} package={item}/>
             ))}
         </ScrollView>
       </View>
@@ -48,17 +42,11 @@ const styles = StyleSheet.create({
         marginTop:10,
         paddingVertical:10,
         paddingBottom:15,
-        margin:10,
         borderRadius:10,
       },
       listContainer:{
         marginTop:15,
-        margin:10,
-        paddingHorizontal:5,
         borderRadius:10,
       },
-      headingText1:{
-        marginTop:-2,
-        marginBottom:0,
-      }
+    
 })

@@ -47,12 +47,10 @@ const SERVICES = [
 export default function ServicesContainer ({ navigation }){
     return (
         <View style={styles.container}>
-          <Heading text="Services" as="heading5"/>
-          <Heading 
-            style={styles.headingText}
-            text="Qu'est-ce que vous voulez comme service à domicile ?" 
-            as="heading6" 
-            color="gray"/>
+          <Heading  
+         
+          text="Services" as="heading5"/>
+        
           <View style={styles.listContainer}>
               <FlatList
                 data={SERVICES}
@@ -70,20 +68,14 @@ export default function ServicesContainer ({ navigation }){
 const styles = StyleSheet.create({
   container:{
     backgroundColor:colors.white,
-    // marginTop:10,
     paddingVertical:10,
     marginVertical:10,
     borderRadius:10,
   },
   listContainer:{
     alignItems:'center',
-    // marginTop:15,
     margin:10,
     paddingHorizontal:5,
     borderRadius:10,
   },
-  headingText:{
-    marginTop:-10,
-    marginBottom:0,
-  }
 });

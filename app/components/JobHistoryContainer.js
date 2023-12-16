@@ -6,12 +6,9 @@ import Heading from "./Heading";
 export default function jobHistoryContainer(){
     return (
         <View style={styles.jobHistoryContainer}>
-            <Heading as="heading4" text="Historique de travail"/>
+            <Heading as="heading5" text="Commentaires"/>
             <JobHistoryItem/>              
-            <JobHistoryItem/>              
-            <JobHistoryItem/>              
-            <JobHistoryItem/>              
-            <JobHistoryItem/>              
+            <JobHistoryItem/>                          
         </View>
     );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet,   Text,   TouchableOpacity,   View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import colors from "../config/colors";
 import TextInput from "./TextInput";
 import BottomModal from "./BottomModal";
@@ -8,7 +8,7 @@ import Label from "./Label";
 import Slider from "@react-native-community/slider";
 import RatingPicker from "./RatingPicker";
 import Button from "./Button";
-import {MaterialCommunityIcons} from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import GoBackButton from "./GoBackButton";
 
 
@@ -16,16 +16,14 @@ export default function Searchbar ({ navigation,showFilterBtn = false, showGoBac
     const [ showFilterModal,setShowFilterModal ] = useState(false);
     const [maxprix,setMaxprix] = useState(100);
     const [startNumber, setStartNumber] = useState(1);
+    
     return (
         <>
             <View style={[styles.container,{
-                   height: showFilterBtn ? 230 : 190,
+                   height: showFilterBtn ? 200 : 160,
             }]}>
                 {showGoBackBtn && <GoBackButton color={'white'} navigation={navigation}/>}
-                <Heading  
-                    as="heading6" 
-                    text={`${showFilterBtn?'Filter et c':'C'}hoisire votre position`}
-                    color="white"/>
+               
                 <View style={styles.wrapper}>
                     <TextInput 
                         icon="map-marker"
@@ -35,14 +33,15 @@ export default function Searchbar ({ navigation,showFilterBtn = false, showGoBac
                         />
                         {showFilterBtn && (
                         <TouchableOpacity style={styles.btnShowModalFilter}  onPress={() => setShowFilterModal(true)}>
-                            <MaterialCommunityIcons name="tune-vertical" size={21} color={colors.white}/>
+                            <MaterialCommunityIcons name="tune-vertical" size={24} color={colors.white}/>
                         </TouchableOpacity>
+                        
                         )}
+
                 </View>
             </View>
             <BottomModal visible={showFilterModal} onClose={() => setShowFilterModal(false)}>
                 <Heading as="heading5" text={'Chercher avec filtre'}/>
-                <Label text={"Filtrer par prix :"} />
                 <Slider
                     style={{ width: '100%' }}
                     minimumValue={100}
@@ -52,7 +51,7 @@ export default function Searchbar ({ navigation,showFilterBtn = false, showGoBac
                     value={maxprix}
                     onValueChange={(value) => setMaxprix(value)}
                 />
-                <Text style={{marginBottom:20}}>prix max :{maxprix.toFixed(0)}</Text>
+                <Text style={{ marginBottom:20 }}>prix max :{maxprix.toFixed(0)}</Text>
                 <RatingPicker
                     number={startNumber} 
                     setNumber={setStartNumber}
@@ -72,9 +71,8 @@ export default function Searchbar ({ navigation,showFilterBtn = false, showGoBac
 const styles = StyleSheet.create({
     container:{
         backgroundColor:colors.primary,
-        paddingHorizontal:5,
+        paddingHorizontal:15,
         paddingTop:'8%',
-     
         justifyContent:'center',
         borderBottomLeftRadius:16,
         borderBottomRightRadius:16,
@@ -87,13 +85,11 @@ const styles = StyleSheet.create({
         top:-5
     },
     btnShowModalFilter:{
-        padding:20,
+        padding:18,
         backgroundColor:colors.secondary,
         borderRadius:10,
-        
     },
     textInput:{
         width:'82%',
-       
     }
 })

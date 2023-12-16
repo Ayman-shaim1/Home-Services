@@ -2,15 +2,14 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons"
 import colors from "../config/colors";
 
-export default function GoBackButton ({navigation,color = "gray"}){
+export default function GoBackButton ({navigation,color = "lightGray"}){
     return (
-        <TouchableOpacity style={styles.btn} onPress={() => navigation.goBack()}>
+        <TouchableOpacity style={[styles.btn,{backgroundColor:colors[color]}]} onPress={() => navigation.goBack()}>
             <MaterialCommunityIcons 
                 name="arrow-left" 
-                size={30}
-                color={colors[color]}
+                size={20}
+                color={colors.black}
                 />
-                {/* <Text style={styles.text}>retourner</Text> */}
         </TouchableOpacity>
     );
 }
@@ -18,7 +17,12 @@ export default function GoBackButton ({navigation,color = "gray"}){
 const styles = StyleSheet.create({
     btn:{
         flexDirection:'row',
-        alignItems:'center'
+        alignItems:'center',
+        width:40,
+        height:40,
+        justifyContent:'center',
+        borderRadius:10,
+        marginBottom:10,
     },
     text:{
         fontSize:22,

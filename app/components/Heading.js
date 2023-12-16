@@ -9,7 +9,8 @@ export default function Heading({ text, as="heading1", color="black",style }){
 
 const styles = StyleSheet.create({
     heading:{
-        marginVertical:10,
+        marginVertical:5,
+        fontFamily:'Lato-Black',
     },
     heading1: {
       fontSize: 55,

@@ -1,24 +1,41 @@
 import React from "react";
 import Constants from "expo-constants";
-import { StyleSheet, SafeAreaView, View, ScrollView } from "react-native";
-import colors from "../config/colors";
+import { SafeAreaView,ScrollView, View } from "react-native";
 
-export default function Screen({ children, style }) {
-  return (
-    <SafeAreaView style={[styles.screen, style]}>
-      <ScrollView style={[styles.view, style]}>{children}</ScrollView>
-    </SafeAreaView>
-  );
+export default function Screen({ children, style, widthPadding = false ,safeArea = false}) {
+  if(safeArea){
+      return (
+        <SafeAreaView 
+          style={[style,{
+            paddingTop: widthPadding ? Constants.statusBarHeight: 0,
+            flex:1,
+          }]}>
+              <ScrollView 
+              showsVerticalScrollIndicator={false}  // Set this to false to hide the vertical scroll bar
+              showsHorizontalScrollIndicator={false} 
+                style={[style,{
+                    paddingTop:widthPadding ? 12 : 0,
+                    paddingHorizontal:widthPadding ? 10 : 0,
+
+                }]}>{children}</ScrollView>
+        </SafeAreaView>
+      );
+  }
+  else {
+    return (
+      <View style={[style,{
+        paddingHorizontal:widthPadding ? 10 : 0,
+        paddingTop: widthPadding ? Constants.statusBarHeight: 0,
+        flex:1,
+      }]}>
+        <ScrollView 
+        showsVerticalScrollIndicator={false}  // Set this to false to hide the vertical scroll bar
+        showsHorizontalScrollIndicator={false} 
+        style={[style,{
+            paddingTop:widthPadding ? 12 : 0,
+            paddingHorizontal:widthPadding ? 10 : 0,
+        }]}>{children}</ScrollView>
+      </View>
+    )
+  }
 }
-
-const styles = StyleSheet.create({
-  screen: {
-    paddingTop: Constants.statusBarHeight,
-    flex: 1,
-  },
-  view: {
-    flex: 1,
-    paddingHorizontal:10,
-    paddingTop:12,
-  },
-});

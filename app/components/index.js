@@ -17,9 +17,10 @@ import Label from "./Label"
 import RatingPicker from "./RatingPicker";
 import JobHistoryContainer from "./JobHistoryContainer";
 import GoBackButton from "./GoBackButton"
-
+import PositionPicker from "./PositionPicker";
 
 export {
+    PositionPicker,
     GoBackButton,
     JobHistoryContainer,
     RatingPicker,

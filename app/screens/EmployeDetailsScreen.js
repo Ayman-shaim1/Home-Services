@@ -2,15 +2,20 @@ import { Image, StyleSheet, View } from "react-native";
 import {  Button, Diviser, GoBackButton, Heading, JobHistoryContainer,  Label,  Rating, Screen } from "../components";
 
 export default function EmployeDetailsScreen ({ navigation }) {
-        return (
-            
+        return ( 
             <>
-                <Screen style={styles.container}>
+                <Screen widthPadding safeArea style={{ paddingHorizontal:10 }}> 
                     <GoBackButton navigation={navigation}/>
                     <Image source={require('../assets/emp1.jpeg')} style={styles.image}/>
                     <View style={styles.textContainer}>
-                        <Heading as="heading5" text={"Jhon Doe"}/>
-                        <Rating number={5}/>
+                        <Heading as="heading6" text={"Jhon Doe  (Jardinier) "}/>
+                        <Rating number={5}  />
+                    </View>
+                    <View style={{ marginBottom:0 }}>
+                        <Heading as="heading6" text="Age:45"/>
+                    </View>
+                    <View style={{ marginBottom:20 }}>
+                         <Heading as="heading6" text={"Nombre de service fait (20)"}/>
                     </View>
                     <View>
                         <Label text={"Description"}/>
@@ -20,7 +25,7 @@ export default function EmployeDetailsScreen ({ navigation }) {
                     <JobHistoryContainer/>
                     
                 </Screen>
-                <Button style={styles.btnWork} text={`Travailler avec M. Jhon Doe`}/>
+                <Button icon={"send"} style={styles.btnWork} text={`Travailler avec M. Jhon Doe`}/>
             </>
         );
 }
@@ -35,7 +40,12 @@ const styles = StyleSheet.create({
     text:{
         marginTop:5,    
     },
-    textContainer:{ justifyContent:'space-between' ,alignItems:'center',flexDirection:'row'},
+    textContainer:{ 
+        marginTop:10,
+        justifyContent:'space-between' ,
+        alignItems:'center',
+        flexDirection:'row',
+    },
     center:{
         alignItems:'center',
     },

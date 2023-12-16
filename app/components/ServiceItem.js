@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     text:{
         marginTop:15,
         fontSize:13,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        fontFamily:'Lato-Regular',
     }
 }) 

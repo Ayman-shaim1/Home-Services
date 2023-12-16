@@ -1,18 +1,22 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
-import { ServicesContainer, Searchbar, Screen } from "../components";
+import {  StyleSheet, View } from "react-native";
+import { ServicesContainer, Screen ,PositionPicker, PackagesContainer} from "../components";
 
 export default function HomeScreen({navigation})  {
     return (
-       <>
-         <Searchbar/>
-         <Screen>
-           <ServicesContainer navigation={navigation}/>
-         </Screen>
-       </>
+      <Screen widthPadding safeArea> 
+           {/* <Searchbar/> */}
+           <View style={styles.positionContainer}>
+              <PositionPicker/>
+           </View>
+           {/* <PackagesContainer /> */}
+           <ServicesContainer navigation={navigation}/>  
+      </Screen>
     )
 }
 
 const styles = StyleSheet.create({
-  
+  positionContainer:{
+      alignItems:'center'
+  }
 });
