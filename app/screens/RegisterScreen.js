@@ -18,9 +18,7 @@ export default function RegisterScreen({navigation}){
                     as={'heading6'} 
                     color={'gray'} />
             </View>
-           <View style={{alignItems:'cente'}}>
-                 <ImagePicker label={"image"}/>
-           </View>
+            <ImagePicker label={"image"}/>
             <TextInput 
                 label="nom"
                 placeholder="entrer votre nom "

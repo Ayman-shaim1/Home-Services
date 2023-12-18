@@ -15,14 +15,19 @@ import Dropdown from "./Dropdown";
 import BottomModal from "./BottomModal";
 import Label from "./Label"
 import RatingPicker from "./RatingPicker";
-import JobHistoryContainer from "./JobHistoryContainer";
+import ReviewContainer from "./ReviewContainer";
 import GoBackButton from "./GoBackButton"
 import PositionPicker from "./PositionPicker";
-
+import FloatButton from "./FloatButton";
+import DiplomaContainer from "./DiplomaContainer"
+import DatePicker from "./DatePicker"
 export {
+    DatePicker,
+    DiplomaContainer,
+    FloatButton,
     PositionPicker,
     GoBackButton,
-    JobHistoryContainer,
+    ReviewContainer,
     RatingPicker,
     Label,
     BottomModal,

@@ -5,7 +5,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Label from "./Label";
 
 
-export default function TextInput({ placeholder,label,icon, keyboardType, secure = false , style,value}){
+export default function TextInput({onFocus, placeholder,label,icon, keyboardType, secure = false , style,value}){
     return (
         <View style={[styles.container,style]}> 
             {label && <Label style={styles.label} color={"black"} text={label}/>}
@@ -15,6 +15,7 @@ export default function TextInput({ placeholder,label,icon, keyboardType, secure
                     style={[styles.input,{
                         paddingLeft:icon ? 40 :20
                     }]}
+                    onFocus={onFocus}
                     keyboardType={keyboardType}
                     placeholder={placeholder}
                     secureTextEntry={secure}

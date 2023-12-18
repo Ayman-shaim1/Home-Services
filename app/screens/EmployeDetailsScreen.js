@@ -1,7 +1,11 @@
-import { Image, StyleSheet, View } from "react-native";
-import {  Button, Diviser, GoBackButton, Heading, JobHistoryContainer,  Label,  Rating, Screen } from "../components";
+import {  Image, ScrollView, StyleSheet, View } from "react-native";
+import {  Diviser, FloatButton, GoBackButton, Heading, ReviewContainer,  Label,  Rating, Screen, DiplomaContainer, BottomModal, TextInput, Button, DatePicker } from "../components";
+import { useState } from "react";
 
 export default function EmployeDetailsScreen ({ navigation }) {
+
+     const [showBottomModal,setShowBottomModal] = useState(false);
+
         return ( 
             <>
                 <Screen widthPadding safeArea style={{ paddingHorizontal:10 }}> 
@@ -12,22 +16,38 @@ export default function EmployeDetailsScreen ({ navigation }) {
                         <Rating number={5}  />
                     </View>
                     <View style={{ marginBottom:0 }}>
-                        <Heading as="heading6" text="Age:45"/>
+                        <Label as="heading6" text="Age:45"/>
                     </View>
                     <View style={{ marginBottom:20 }}>
-                         <Heading as="heading6" text={"Nombre de service fait (20)"}/>
+                         <Label as="heading6" text={"Nombre de travaux effectués : (20)"}/>
                     </View>
+                    <DiplomaContainer/>
                     <View>
-                        <Label text={"Description"}/>
-                        <Label color={"gray"} text={"Lorem ipsum Lorem ipsumipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum elit sodales dolor consectetur, eget maximus enim placerat. Sed dictum nisl dui, efficitur euismod dui dictum ut. "}/>
+                        <Heading as="heading6" text={"Description"}/>
+                        <Label 
+                            color={"gray"}
+                            text={"Lorem ipsum Lorem ipsumipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum elit sodales dolor consectetur, eget maximus enim placerat. Sed dictum nisl dui, efficitur euismod dui dictum ut. "}/>
                     </View>
                     <Diviser />
-                    <JobHistoryContainer/>
+                    <ReviewContainer/>
                     
                 </Screen>
-                <Button icon={"send"} style={styles.btnWork} text={`Travailler avec M. Jhon Doe`}/>
+                <View style={styles.btncontainer}>
+                   <FloatButton icon={"check-network"} onPress={() => setShowBottomModal(true)}/>
+                </View>
+
+                <BottomModal top={20} visible={showBottomModal} onClose={() => setShowBottomModal(false)}>
+                    <ScrollView>
+                         <Heading text={"valide votre demande"} as="heading6"/>
+                        <DatePicker placeholder={"veuillez saisire une date"} label={"date"}/>
+                        <DatePicker placeholder={"veuillez saisire une heure de depart"} label={"heure de depart"}/>
+                        <TextInput  keyboardType={"numeric"} placeholder={"veuillez saisire le prix par heure"} label={"prix mar heure"}/>
+                        <TextInput keyboardType={"numeric"} placeholder={"veuillez saisire le nombre d'heures de travaille"} label={"nombre d'heures de travaille"}/>
+                        <Button icon={"check-network"} text={"confirmer"}/>
+                    </ScrollView>
+                </BottomModal>
             </>
-        );
+            );
 }
 
 const styles = StyleSheet.create({
@@ -60,7 +80,7 @@ const styles = StyleSheet.create({
     rating:{
         marginTop:-7
     },
-    btnWork:{
+    btncontainer:{
         position:'absolute',
         bottom:2,
         width:'98%',

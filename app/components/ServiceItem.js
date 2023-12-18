@@ -9,26 +9,25 @@ export default function ServiceItem ({ navigation,service,index }) {
         Animated.timing(animationValue, {
           toValue: 1,
           duration: 500,
-          delay: index * 200, // Adjust the delay for staggered animation
+          delay: index * 200, 
           useNativeDriver: false,
         }).start();
       };
       
-      const translateX = animationValue.interpolate({
+      const translateY = animationValue.interpolate({
         inputRange: [0, 1],
-        outputRange: [100, 0], // You can customize the animation as needed
+        outputRange: [100, 0], 
       });
-
  
     useEffect(() => {
-      animateItem(1); // Trigger animation when the component mounts
+      animateItem(1); 
     }, []);
 
     return (
         <Animated.View
           style={{
-              transform: [{ translateX }],
-            opacity: animationValue,
+              transform: [{translateY}],
+               opacity: animationValue,
           }} 
         >
           <TouchableOpacity style={styles.service} onPress={() => navigation.navigate('EmployeList')}>

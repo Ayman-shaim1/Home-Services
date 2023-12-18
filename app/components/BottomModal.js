@@ -3,7 +3,7 @@ import { Modal, StyleSheet,View,PanResponder } from "react-native";
 import CloseButton from "./CloseButton";
 import colors from "../config/colors";
 
-export default function BottomModal({ visible = false , children, onClose }){
+export default function BottomModal({ visible = false , children, onClose,top=45 }){
 
   const [dragY, setDragY] = useState(0);
 
@@ -34,7 +34,10 @@ export default function BottomModal({ visible = false , children, onClose }){
         <Modal visible={visible} style={styles.modal}  animationType='fade' transparent={true}>
             <View style={styles.overlay}>
                 <View style={[styles.modalWrapper,
-                        { transform: [{ translateY: Math.max(dragY, 0) }] },
+                        { 
+                          transform: [{ translateY: Math.max(dragY, 0) }],
+                          top:`${top}%`
+                        }  
                 ]}
                 {...panResponder.panHandlers}>
                     <View style={styles.modalContent}>
@@ -59,7 +62,7 @@ const styles = StyleSheet.create({
     },
     modalWrapper:{
         paddingTop:5,
-        top:'45%',
+        // top:'45%',
         height:'100%',
         backgroundColor:colors.secondary,
         borderRadius:20,

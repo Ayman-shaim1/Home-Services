@@ -5,6 +5,7 @@ import colors from '../config/colors';
 import ProfileScreen from '../screens/ProfileScreen';
 import NotificationsScreen from '../screens/NotificationsScreen';
 import { Platform, View } from 'react-native';
+import JobHistoryScreen from '../screens/JobHistoryScreen';
 const Tab = createBottomTabNavigator();
 
 
@@ -22,7 +23,11 @@ export default function AppNavigator() {
                 paddingTop:Platform.OS === "android" ? -5:5,
                 height:Platform.OS === "android" ? 63 : 80
             },
-        }}>
+        }}
+        sceneContainerStyle={{
+            backgroundColor:colors.white,
+        }}
+        >
         <Tab.Screen 
             name="Accueil" 
             component={ClientNavigator}
@@ -32,6 +37,16 @@ export default function AppNavigator() {
                     ),   
                 }}
             />
+             <Tab.Screen 
+                name="JobHistory" 
+                component={JobHistoryScreen}
+                    options={{
+                        tabBarBadge:null,
+                        tabBarIcon: ({ color, size,focused }) => (
+                            <MaterialCommunityIcons name={`${focused? "account-network":"account-network-outline"}`} color={color} size={34} />
+                        ),
+                    }}
+                />
         
         <Tab.Screen 
             name="Notifications" 
