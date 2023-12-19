@@ -1,5 +1,13 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Autorisez $(PRODUCT_NAME) à utiliser votre emplacement."
+        }
+      ]
+    ],
     "name": "HomeService",
     "slug": "HomeService",
     "version": "1.0.0",

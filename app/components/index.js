@@ -20,8 +20,12 @@ import GoBackButton from "./GoBackButton"
 import PositionPicker from "./PositionPicker";
 import FloatButton from "./FloatButton";
 import DiplomaContainer from "./DiplomaContainer"
-import DatePicker from "./DatePicker"
+import DatePicker from "./DatePicker";
+import Toast from "./Toast"
+
+
 export {
+    Toast,
     DatePicker,
     DiplomaContainer,
     FloatButton,

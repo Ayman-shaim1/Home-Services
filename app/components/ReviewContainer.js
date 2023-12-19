@@ -17,7 +17,6 @@ export default function ReviewContainer(){
 const styles = StyleSheet.create({
     reviewContainer:{
         marginTop:10,
-        marginBottom:50,
     },
     heading:{
         marginBottom:15,
