@@ -1,10 +1,11 @@
-import { Label, Screen } from "../components";
+import { Heading, JobHistoryContainer, Label, Screen } from "../components";
 
 
 export default function JobHistoryScreen(){
     return (
          <Screen widthPadding safeArea>
-            <Label text={"Hello world"}/>
+            <Heading text={"Historique de demandes"} as="heading6"/>
+            <JobHistoryContainer/>
          </Screen>
     );
 }

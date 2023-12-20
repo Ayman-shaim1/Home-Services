@@ -6,7 +6,7 @@ import NavigationContainer from "../navigation/NavigationContainer";
 import AppNavigator from "../navigation/AppNavigator";
 import ClientNavigator from "../navigation/ClientNavigator";
 import LoginNavigator from "../navigation/LoginNavigator";
-// import { Toast } from "../components";
+import { Toast } from "../components";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -31,7 +31,7 @@ export default function DefaultLayout() {
           <NavigationContainer>
             <AppNavigator />
           </NavigationContainer>
-          {/* <Toast/> */}
+          <Toast/>
       </View>
     );
     

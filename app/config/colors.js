@@ -1,13 +1,30 @@
 export default {
-    primary: "#0082F6",
-    secondary: "#F9C80E",
-    danger: "#B00020",
-    black: "#000",
-    white: "#fff",
-    warning: "#f0ad4e",
-    success: "#4bbf73",
-    gray:'#B0B0B0',
-    lightGray:'#F2F2F2',
-    backgroundColor:'#f4f4f4'
-  };
-  
+  primary: "#0082F6",
+  secondary: "#F9C80E",
+  danger: "#B00020",
+  black: "#000",
+  white: "#fff",
+  warning: "#f0ad4e",
+  success: "#4bbf73",
+  gray: "#B0B0B0",
+  lightGray: "#F2F2F2",
+  backgroundColor: "#f4f4f4",
+
+  // subtle :
+  primarySubtle: "#d1d1d1",
+  secondarySubtle: "#fff",
+  successSubtle: "#dbf2e3",
+  infoSubtle: "#d2ebf5",
+  warningSubtle: "#fcefdc",
+  dangerSubtle: "#f7dddc",
+  lightSubtle: "#fcfcfd",
+  darkSubtle: "#ced4da",
+  primaryBorderSubtle: "a3a3a3",
+  secondaryBorderSubtle: "#ff",
+  successBorderSubtle: "b7e5c7",
+  infoBorderSubtle: "a5d7ec",
+  warningBorderSubtle: "f9deb8",
+  dangerBorderSubtle: "f0bab9",
+  lightBorderSubtle: "f7f7f9",
+  darkBorderSubtle: "adb5bd",
+};

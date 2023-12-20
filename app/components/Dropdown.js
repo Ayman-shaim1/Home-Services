@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Dropdown as RNDropdown } from 'react-native-element-dropdown';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import colors from '../config/colors';
-import Label from './Label';
+import React, { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { Dropdown as RNDropdown } from "react-native-element-dropdown";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import colors from "../config/colors";
+import Label from "./Label";
 
 // const data = [
 //   { label: 'Item 1', value: '1' },
@@ -16,34 +16,49 @@ import Label from './Label';
 //   { label: 'Item 8', value: '8' },
 // ];
 
-const Dropdown = ({ icon, label ,value,setValue, data,maxHeight = 200,placeholder }) => {
-
+const Dropdown = ({
+  icon,
+  label,
+  value,
+  setValue,
+  data,
+  maxHeight = 200,
+  placeholder,
+}) => {
   return (
     <View style={styles.container}>
-        {label && <Label text={label}/>}
-        <View style={styles.dropdownContainer}>
-            {icon && <MaterialCommunityIcons  style={styles.icon} name={icon} size={18} color={colors.gray}/>}
-            <RNDropdown
-                style={[styles.dropdown, 
-                    { 
-                        borderColor: colors.gray,
-                        paddingLeft:icon ? 40 :20
-                    }]}
-                placeholderStyle={{ 
-                    paddingLeft:icon ? 40 :20
-                }}
-                data={data}
-                maxHeight={maxHeight}
-                labelField="label"
-                valueField="value"
-                placeholder={placeholder}
-                value={value}
-                onChange={item => {
-                    setValue(item.value);
-                }}
-            />
-        </View>
-
+      {label && <Label text={label} />}
+      <View style={styles.dropdownContainer}>
+        {icon && (
+          <MaterialCommunityIcons
+            style={styles.icon}
+            name={icon}
+            size={18}
+            color={colors.gray}
+          />
+        )}
+        <RNDropdown
+          style={[
+            styles.dropdown,
+            {
+              borderColor: colors.gray,
+              paddingLeft: icon ? 40 : 20,
+            },
+          ]}
+          placeholderStyle={{
+            paddingLeft: icon ? 40 : 20,
+          }}
+          data={data}
+          maxHeight={maxHeight}
+          labelField="label"
+          valueField="value"
+          placeholder={placeholder}
+          value={value}
+          onChange={(item) => {
+            setValue(item.value);
+          }}
+        />
+      </View>
     </View>
   );
 };
@@ -51,29 +66,29 @@ const Dropdown = ({ icon, label ,value,setValue, data,maxHeight = 200,placeholde
 export default Dropdown;
 
 const styles = StyleSheet.create({
-    container:{
-        marginTop:7,
-    },
-    dropdownContainer:{
-        position:'relative',
-        zIndex:100,
-    },
-    icon:{
-       position:'absolute', 
-       zIndex:1000,
-       top:'35%',
-       left:'4%'
-    },
-    label:{
-        fontSize:16,
-        fontWeight:'bold',
-        marginBottom:5,
-    },
-    dropdown:{
-        paddingVertical:12,
-        paddingRight:24,
-        backgroundColor:colors.lightGray,
-        borderRadius:10,
-        fontSize:16,
-    }
+  container: {
+    marginTop: 7,
+  },
+  dropdownContainer: {
+    position: "relative",
+    zIndex: 100,
+  },
+  icon: {
+    position: "absolute",
+    zIndex: 1000,
+    top: "35%",
+    left: "4%",
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginBottom: 5,
+  },
+  dropdown: {
+    paddingVertical: 12,
+    paddingRight: 24,
+    backgroundColor: colors.lightGray,
+    borderRadius: 10,
+    fontSize: 16,
+  },
 });

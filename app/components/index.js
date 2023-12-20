@@ -13,40 +13,41 @@ import EmployeItem from "./EmployeItem";
 import Rating from "./Rating";
 import Dropdown from "./Dropdown";
 import BottomModal from "./BottomModal";
-import Label from "./Label"
+import Label from "./Label";
 import RatingPicker from "./RatingPicker";
 import ReviewContainer from "./ReviewContainer";
-import GoBackButton from "./GoBackButton"
+import GoBackButton from "./GoBackButton";
 import PositionPicker from "./PositionPicker";
 import FloatButton from "./FloatButton";
-import DiplomaContainer from "./DiplomaContainer"
+import DiplomaContainer from "./DiplomaContainer";
 import DatePicker from "./DatePicker";
-import Toast from "./Toast"
-
+import Toast from "./Toast";
+import JobHistoryContainer from "./JobHistoryContainer";
 
 export {
-    Toast,
-    DatePicker,
-    DiplomaContainer,
-    FloatButton,
-    PositionPicker,
-    GoBackButton,
-    ReviewContainer,
-    RatingPicker,
-    Label,
-    BottomModal,
-    Dropdown as Dropdown,
-    Rating,
-    EmployeItem,
-    ImagePicker,
-    Diviser,
-    TextInput,
-    Button,
-    Heading,
-    ServiceItem,
-    ServicesContainer,
-    Screen,
-    Searchbar,
-    PackagesContainer,
-    PackageItem
-}
+  JobHistoryContainer,
+  Toast,
+  DatePicker,
+  DiplomaContainer,
+  FloatButton,
+  PositionPicker,
+  GoBackButton,
+  ReviewContainer,
+  RatingPicker,
+  Label,
+  BottomModal,
+  Dropdown as Dropdown,
+  Rating,
+  EmployeItem,
+  ImagePicker,
+  Diviser,
+  TextInput,
+  Button,
+  Heading,
+  ServiceItem,
+  ServicesContainer,
+  Screen,
+  Searchbar,
+  PackagesContainer,
+  PackageItem,
+};

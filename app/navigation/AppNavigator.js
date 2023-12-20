@@ -41,7 +41,6 @@ export default function AppNavigator() {
                 name="JobHistory" 
                 component={JobHistoryScreen}
                     options={{
-                        tabBarBadge:null,
                         tabBarIcon: ({ color, size,focused }) => (
                             <MaterialCommunityIcons name={`${focused? "account-network":"account-network-outline"}`} color={color} size={34} />
                         ),
@@ -52,7 +51,7 @@ export default function AppNavigator() {
             name="Notifications" 
             component={NotificationsScreen}
                 options={{
-                    tabBarBadge:null,
+                    tabBarBadge:2,
                     tabBarIcon: ({ color, size,focused }) => (
                         <MaterialCommunityIcons name={`${focused? "bell":"bell-outline"}`} color={color} size={34} />
                     ),
