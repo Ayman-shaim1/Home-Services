@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import colors from "../config/colors";
 import Heading from "./Heading";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Label from "./Label";
 export default function JobHistoryItem({ navigation , JobHistoryItem}) {
   return (
     <TouchableOpacity style={styles.jobItem} onPress={() => navigation.navigate('details')}>
@@ -14,7 +15,7 @@ export default function JobHistoryItem({ navigation , JobHistoryItem}) {
           </View>
         </View>
       </View>
-      <Text style={styles.textDate}>{new Date().toLocaleDateString()}</Text>
+      <Label style={styles.textDate}  text={new Date().toLocaleDateString()}/>
       <MaterialCommunityIcons
         size={30}
         name="arrow-right"
@@ -36,9 +37,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   image: {
-    width: 85,
-    height: 85,
-    borderRadius: 20,
+    width: 80,
+    height: 80,
+    borderRadius: 15,
+    resizeMode: "cover",
   },
   content: {
     flexDirection: "row",
@@ -59,7 +61,8 @@ const styles = StyleSheet.create({
   statusText: {
     color: colors.success,
     fontWeight: "700",
-    fontSize: 12,
+    fontSize: 14,
+    fontFamily:'Lato-Regular'
   },
   textDate: {
     marginTop: 10,

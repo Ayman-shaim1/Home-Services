@@ -26,7 +26,7 @@ export default function ServiceItem({ navigation, service, index }) {
   });
 
   useEffect(() => {
-    animateItem();
+    animateItem(1);
   }, []);
 
   return (

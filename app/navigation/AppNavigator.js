@@ -21,8 +21,9 @@ export default function AppNavigator() {
             tabBarInactiveTintColor:colors.gray,
             tabBarStyle:{
                 backgroundColor:colors.white,
-                paddingTop:Platform.OS === "android" ? -5:5,
-                height:Platform.OS === "android" ? 63 : 80
+                paddingTop:Platform.OS === "android" ? 8:5,
+                height:Platform.OS === "android" ? 63 : 80,
+                paddingBottom:Platform.OS === "android" ? 10 : 24,
             },
         }}
         sceneContainerStyle={{

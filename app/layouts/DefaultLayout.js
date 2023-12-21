@@ -10,28 +10,27 @@ import { Toast } from "../components";
 SplashScreen.preventAutoHideAsync();
 
 export default function DefaultLayout() {
+  
+  const [fontsLoaded] = useFonts({
+    "Lato-Black": require("../assets/fonts/Lato/Lato-Black.ttf"),
+    "Lato-Regular": require("../assets/fonts/Lato/Lato-Regular.ttf"),
+    "Lato-Light": require("../assets/fonts/Lato/Lato-Light.ttf"),
+  });
 
-    const [fontsLoaded] = useFonts({
-      "Lato-Black": require("../assets/fonts/Lato/Lato-Black.ttf"),
-      "Lato-Regular": require("../assets/fonts/Lato/Lato-Regular.ttf"),
-      "Lato-Light": require("../assets/fonts/Lato/Lato-Light.ttf")
-    });
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) await SplashScreen.hideAsync();
+  }, [fontsLoaded]);
 
-    const onLayoutRootView = useCallback(async () => {
-      if (fontsLoaded) await SplashScreen.hideAsync();
-    }, [fontsLoaded]);
+  if (!fontsLoaded) {
+    return null;
+  }
 
-    if (!fontsLoaded) {
-      return null;
-    }
-
-    return (
-      <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
-          <NavigationContainer>
-            <AppNavigator />
-          </NavigationContainer>
-          <Toast/>
-      </View>
-    );
-    
+  return (
+    <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
+      <NavigationContainer>
+        <AppNavigator />
+      </NavigationContainer>
+      <Toast />
+    </View>
+  );
 }
