@@ -1,8 +1,9 @@
 import React from "react";
-import { StyleSheet, TextInput as RNTextInput, View, Text } from "react-native";
+import { TextInput as RNTextInput, View } from "react-native";
 import colors from "../config/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Label from "./Label";
+import globalStyle from "../config/globalStyle";
 
 export default function TextInput({
   textContentType,
@@ -17,12 +18,12 @@ export default function TextInput({
   value,
 }) {
   return (
-    <View style={[styles.container, style]}>
-      {label && <Label style={styles.label} color={"black"} text={label} />}
-      <View style={styles.inputContainer}>
+    <View style={[globalStyle.input.container, style]}>
+      {label && <Label style={globalStyle.input.label} color={"black"} text={label} />}
+      <View style={globalStyle.input.inputContainer}>
         {icon && (
           <MaterialCommunityIcons
-            style={styles.icon}
+            style={globalStyle.input.icon}
             name={icon}
             size={18}
             color={colors.gray}
@@ -30,7 +31,7 @@ export default function TextInput({
         )}
         <RNTextInput
           style={[
-            styles.input,
+            globalStyle.input.input,
             {
               paddingLeft: icon ? 40 : 20,
             },
@@ -47,27 +48,3 @@ export default function TextInput({
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginVertical: 7,
-  },
-  inputContainer: {
-    position: "relative",
-    zIndex: 100,
-  },
-  icon: {
-    position: "absolute",
-    zIndex: 1000,
-    top: "35%",
-    left: "4%",
-  },
-
-  input: {
-    paddingVertical: 20,
-    paddingRight: 24,
-    backgroundColor: colors.lightGray,
-    borderRadius: 10,
-    fontSize: 16,
-  },
-});

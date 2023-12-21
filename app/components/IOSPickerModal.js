@@ -3,13 +3,7 @@ import { Modal, StyleSheet, View, PanResponder } from "react-native";
 import CloseButton from "./CloseButton";
 import colors from "../config/colors";
 
-
-export default function BottomModal({
-  visible = false,
-  children,
-  onClose,
-  top = 45,
-}) {
+export default function IOSPickerModal({ visible, onClose, children }) {
   const [dragY, setDragY] = useState(0);
 
   const panResponder = useRef(
@@ -47,10 +41,9 @@ export default function BottomModal({
             styles.modalWrapper,
             {
               transform: [{ translateY: Math.max(dragY, 0) }],
-              top: `${top}%`,
             },
           ]}
-          {...panResponder.panHandlers}
+        //   {...panResponder.panHandlers}
         >
           <View style={styles.modalContent}>
             <View style={styles.line}></View>
@@ -72,18 +65,12 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     flex: 1,
   },
-  modalWrapper: {
-    paddingTop: 5,
-    // top:'45%',
-    height: "100%",
-    backgroundColor: colors.secondary,
-    borderRadius: 20,
-  },
   btnClose: {
     alignSelf: "flex-end",
   },
   modalContent: {
     backgroundColor: colors.white,
+    top: "50%",
     height: "100%",
     padding: 10,
     borderRadius: 20,

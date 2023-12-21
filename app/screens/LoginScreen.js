@@ -6,7 +6,7 @@ import colors from "../config/colors";
 
 export default function LoginScreen({navigation}){
     return (
-        <Screen>
+        <Screen widthPadding safeArea>
              <GoBackButton navigation={navigation}/>
 
             <View style={styles.container}>

@@ -19,12 +19,15 @@ import { useState } from "react";
 import { Toast } from "../services";
 
 export default function EmployeDetailsScreen({ navigation }) {
-
   const [showBottomModal, setShowBottomModal] = useState(false);
 
   const confirmHandler = () => {
     setShowBottomModal(false);
-    Toast.open({ type:'warning',message:'Votre demande a été envoyée avec succès.'})
+
+    Toast.open({
+      type: "success",
+      message: "Votre demande a été envoyée avec succès.",
+    });
   };
 
   return (

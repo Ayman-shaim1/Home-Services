@@ -10,7 +10,7 @@ export default function WelcomeScreen({ navigation }){
             <View style={styles.textContainer}>
                 <Image style={styles.logo} source={require("../assets/service.png")} />
                 <Text style={styles.tagline}>Welcome</Text>
-                <Text style={styles.tagline}>To E-School bus</Text>
+                <Text style={styles.tagline}>To Home Services</Text>
             </View>
            
             <View style={styles.buttonsContainer}>

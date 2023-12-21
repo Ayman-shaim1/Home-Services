@@ -7,7 +7,7 @@ import colors from "../config/colors";
 
 export default function RegisterScreen({navigation}){
     return (
-        <Screen>
+        <Screen widthPadding safeArea>
              <GoBackButton navigation={navigation}/>
            <View style={styles.container}>
                 <Image source={LogoImage} style={styles.logo}/>

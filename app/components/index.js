@@ -22,10 +22,13 @@ import FloatButton from "./FloatButton";
 import DiplomaContainer from "./DiplomaContainer";
 import DatePicker from "./DatePicker";
 import Toast from "./Toast";
-import JobHistoryContainer from "./JobHistoryContainer";
+import JobHistoryItem from "./JobHistoryItem";
+import Picker from "./Picker";
+
 
 export {
-  JobHistoryContainer,
+  Picker,
+  JobHistoryItem,
   Toast,
   DatePicker,
   DiplomaContainer,

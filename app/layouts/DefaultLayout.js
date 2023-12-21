@@ -4,7 +4,6 @@ import { useCallback } from "react";
 import { View } from "react-native";
 import NavigationContainer from "../navigation/NavigationContainer";
 import AppNavigator from "../navigation/AppNavigator";
-import ClientNavigator from "../navigation/ClientNavigator";
 import LoginNavigator from "../navigation/LoginNavigator";
 import { Toast } from "../components";
 
