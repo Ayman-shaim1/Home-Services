@@ -12,6 +12,6 @@ const styles = StyleSheet.create({
     marginStart: 3,
     marginBottom: 5,
     textAlign: "justify",
-    fontFamily: "Lato-Regular",
+    fontFamily: "LatoRegular",
   },
 });

@@ -75,14 +75,12 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 21,
-    fontWeight: "800",
     color: colors.black,
-    fontFamily: "Lato-Black",
+    fontFamily: "LatoBlack",
   },
   price: {
     fontSize: 14,
-    fontWeight: "700",
     color: colors.gray,
-    fontFamily: "Lato-Regular",
+    fontFamily: "LatoRegular",
   },
 });

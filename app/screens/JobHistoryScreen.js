@@ -15,13 +15,16 @@ import colors from "../config/colors";
 const JOBHISTORIES = [
   {
     id: 1,
-    employeName: "Jhon Doe",
+    employeName: "Jane Doe",
     dateJob: new Date(),
+    image:require("../assets/emp3.jpeg")
   },
   {
     id: 2,
-    employeName: "Steve Smith",
+    employeName: "Maria Jhonson",
     dateJob: new Date(),
+    image:require("../assets/emp4.jpeg"),
+
   },
 ];
 

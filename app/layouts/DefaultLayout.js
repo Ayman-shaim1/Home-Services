@@ -4,18 +4,17 @@ import { useCallback } from "react";
 import { View } from "react-native";
 import NavigationContainer from "../navigation/NavigationContainer";
 import AppNavigator from "../navigation/AppNavigator";
-import LoginNavigator from "../navigation/LoginNavigator";
 import { Toast } from "../components";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function DefaultLayout() {
-  
   const [fontsLoaded] = useFonts({
-    "Lato-Black": require("../assets/fonts/Lato/Lato-Black.ttf"),
-    "Lato-Regular": require("../assets/fonts/Lato/Lato-Regular.ttf"),
-    "Lato-Light": require("../assets/fonts/Lato/Lato-Light.ttf"),
+    "LatoBlack": require("../assets/fonts/Lato/Lato-Black.ttf"),
+    "LatoRegular": require("../assets/fonts/Lato/Lato-Regular.ttf"),
+    "LatoLight": require("../assets/fonts/Lato/Lato-Light.ttf"),
   });
+
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) await SplashScreen.hideAsync();
@@ -24,6 +23,8 @@ export default function DefaultLayout() {
   if (!fontsLoaded) {
     return null;
   }
+
+  
 
   return (
     <View onLayout={onLayoutRootView} style={{ flex: 1 }}>

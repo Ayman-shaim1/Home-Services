@@ -7,7 +7,7 @@ export default function JobHistoryItem({ navigation , JobHistoryItem}) {
   return (
     <TouchableOpacity style={styles.jobItem} onPress={() => navigation.navigate('details')}>
       <View style={styles.content}>
-        <Image source={require("../assets/emp4.jpeg")} style={styles.image} />
+        <Image source={JobHistoryItem.image} style={styles.image} />
         <View style={styles.textContent}>
           <Heading text={JobHistoryItem.employeName} as="heading6" />
           <View style={styles.status}>
@@ -17,7 +17,7 @@ export default function JobHistoryItem({ navigation , JobHistoryItem}) {
       </View>
       <Label style={styles.textDate}  text={new Date().toLocaleDateString()}/>
       <MaterialCommunityIcons
-        size={30}
+        size={22}
         name="arrow-right"
         color={colors.gray}
       />
@@ -60,9 +60,8 @@ const styles = StyleSheet.create({
   },
   statusText: {
     color: colors.success,
-    fontWeight: "700",
     fontSize: 14,
-    fontFamily:'Lato-Regular'
+    fontFamily:'LatoRegular'
   },
   textDate: {
     marginTop: 10,

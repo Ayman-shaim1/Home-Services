@@ -17,10 +17,13 @@ export default function PositionPicker() {
     } else if (location) {
       getAddressFromCoordinates(location.latitude, location.latitude)
         .then((address) => {
-          setText(address);
+        if(typeof address === "object")
+           setText("Erreur connexion impossible")
+        else
+          setText(address)
         })
         .catch((err) => {
-          setText(err);
+          setText(String("Erreur connexion impossible: ", err));
         });
       callonce = true;
     }

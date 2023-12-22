@@ -45,12 +45,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    fontWeight: "800",
-    fontFamily:'Lato-Black'
+    fontFamily:'LatoBlack'
   },
   dates: {
     color: colors.gray,
-    fontWeight: "700",
-    fontFamily:'Lato-Regular'
+    fontFamily:'LatoRegular'
   },
 });

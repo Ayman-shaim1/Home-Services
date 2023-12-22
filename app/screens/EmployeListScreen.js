@@ -99,7 +99,7 @@ export default function EmployeListScreen({ navigation }) {
         <Text
           style={{
             marginBottom: 20,
-            fontFamily: "Lato-Regular",
+            fontFamily: "LatoRegular",
           }}
         >
           prix max :{maxprix.toFixed(0)}
@@ -109,7 +109,7 @@ export default function EmployeListScreen({ navigation }) {
           setNumber={setStartNumber}
           label={"Filtrer par etoile :"}
         />
-        <Text style={{ fontFamily: "Lato-Regular" }}>
+        <Text style={{ fontFamily: "LatoRegular" }}>
           nombre d'etoile choisie: {startNumber}
         </Text>
         <Button

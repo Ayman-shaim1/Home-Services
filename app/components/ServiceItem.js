@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
   text: {
     marginTop: 15,
     fontSize: 13,
-    fontWeight: "bold",
-    fontFamily: "Lato-Regular",
+    fontFamily: "LatoRegular",
   },
 });

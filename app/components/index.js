@@ -24,9 +24,10 @@ import DatePicker from "./DatePicker";
 import Toast from "./Toast";
 import JobHistoryItem from "./JobHistoryItem";
 import Picker from "./Picker";
-
+import Map from "./Map";
 
 export {
+  Map,
   Picker,
   JobHistoryItem,
   Toast,

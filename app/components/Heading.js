@@ -17,30 +17,24 @@ export default function Heading({
 const styles = StyleSheet.create({
   heading: {
     marginVertical: 5,
-    fontFamily: "Lato-Black",
+    fontFamily: "LatoBlack",
   },
   heading1: {
     fontSize: 55,
-    fontWeight: "bold",
   },
   heading2: {
     fontSize: 45,
-    fontWeight: "bold",
   },
   heading3: {
     fontSize: 39,
-    fontWeight: "bold",
   },
   heading4: {
     fontSize: 32,
-    fontWeight: "bold",
   },
   heading5: {
     fontSize: 26,
-    fontWeight: "bold",
   },
   heading6: {
     fontSize: 18,
-    fontWeight: "bold",
   },
 });
