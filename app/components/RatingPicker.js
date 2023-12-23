@@ -4,7 +4,7 @@ import colors from "../config/colors";
 import { useState } from "react";
 import Label from "./Label";
 
-export default function RatingPicker({
+export default function   RatingPicker({
   style,
   label,
   number,

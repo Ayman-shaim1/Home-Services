@@ -35,9 +35,10 @@ export default function Map({ position }) {
 
 const styles = StyleSheet.create({
   container: {
-    width: "90%",
-    height: 200,
+    width: "75%",
+    height: 180,
     borderRadius: 20,
+    paading:10,
   },
   map: {
     width: "100%",

@@ -3,7 +3,6 @@ import { Modal, StyleSheet, View, PanResponder } from "react-native";
 import CloseButton from "./CloseButton";
 import colors from "../config/colors";
 
-
 export default function BottomModal({
   visible = false,
   children,

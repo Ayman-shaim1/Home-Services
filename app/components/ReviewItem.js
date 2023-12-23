@@ -10,6 +10,7 @@ import Heading from "./Heading";
 import Rating from "./Rating";
 import Label from "./Label";
 import BottomModal from "./BottomModal";
+import colors from "../config/colors";
 
 export default function ReviewItem({ index }) {
   const [showBottomModal, setShowBottomModal] = useState(false);
@@ -34,10 +35,10 @@ export default function ReviewItem({ index }) {
   }, []);
   return (
     <Animated.View
-      style={{
+      style={[styles.reviewItem,{
         transform: [{ translateY }],
         opacity: animationValue,
-      }}
+      }]}
     >
       <TouchableOpacity
         onPress={() => setShowBottomModal(true)}
@@ -96,7 +97,7 @@ export default function ReviewItem({ index }) {
 
 const styles = StyleSheet.create({
   reviewItem: {
-    marginVertical: 20,
+    marginBottom: 20,
   },
   userImage: {
     width: 35,

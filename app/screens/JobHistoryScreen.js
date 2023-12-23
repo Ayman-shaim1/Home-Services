@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { StyleSheet, View, TouchableOpacity, FlatList } from "react-native";
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  FlatList,
+  Platform,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   Heading,
@@ -17,14 +23,13 @@ const JOBHISTORIES = [
     id: 1,
     employeName: "Jane Doe",
     dateJob: new Date(),
-    image:require("../assets/emp3.jpeg")
+    image: require("../assets/emp3.jpeg"),
   },
   {
     id: 2,
     employeName: "Maria Jhonson",
     dateJob: new Date(),
-    image:require("../assets/emp4.jpeg"),
-
+    image: require("../assets/emp4.jpeg"),
   },
 ];
 
@@ -34,7 +39,7 @@ export default function JobHistoryScreen({ navigation }) {
 
   return (
     <Screen widthPadding safeArea>
-      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+      <View style={styles.header}>
         <Heading text={"Historique de demandes"} as="heading5" />
 
         <TouchableOpacity
@@ -48,6 +53,7 @@ export default function JobHistoryScreen({ navigation }) {
           />
         </TouchableOpacity>
       </View>
+
       <BottomModal
         top={30}
         visible={showFilterModal}
@@ -80,7 +86,7 @@ export default function JobHistoryScreen({ navigation }) {
           onPress={() => setShowFilterModal(false)}
         />
       </BottomModal>
-
+      
       <FlatList
         data={JOBHISTORIES}
         keyExtractor={(item) => item.id}
@@ -93,16 +99,22 @@ export default function JobHistoryScreen({ navigation }) {
         )}
         scrollEnabled={false}
       />
-
-      
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: Platform.OS === "ios" ? 20 : 40,
+  },
   btnShowModalFilter: {
     padding: 12,
     backgroundColor: colors.secondary,
     borderRadius: 10,
+  },
+  container: {
+    paddingTop: 100,
   },
 });

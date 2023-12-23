@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+
 import {
   BottomModal,
   Button,
@@ -16,11 +17,11 @@ import {
   PositionPicker,
   RatingPicker,
   Screen,
-  TextInput,
 } from "../components";
 import Slider from "@react-native-community/slider";
 import colors from "../config/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 const EMPLOYES = [
   {
     id: 1,
@@ -60,13 +61,7 @@ export default function EmployeListScreen({ navigation }) {
   return (
     <Screen widthPadding safeArea style={styles.container}>
       <GoBackButton navigation={navigation} />
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
+      <View style={styles.header}>
         <PositionPicker />
         <TouchableOpacity
           style={styles.btnShowModalFilter}
@@ -88,11 +83,13 @@ export default function EmployeListScreen({ navigation }) {
         <Heading as="heading5" text={"Chercher avec filtre"} />
         <Label text={"Filtrer par prix :"} />
         <Slider
-          style={{ width: "100%" }}
+          style={{ width: "100%"}}
           minimumValue={100}
           maximumValue={1000}
+        
           thumbTintColor={colors.primary}
           minimumTrackTintColor={colors.primary}
+        
           value={maxprix}
           onValueChange={(value) => setMaxprix(value)}
         />
@@ -126,6 +123,7 @@ export default function EmployeListScreen({ navigation }) {
           onPress={() => setShowFilterModal(false)}
         />
       </BottomModal>
+
       <FlatList
         style={{ marginTop: 20 }}
         data={EMPLOYES}
@@ -141,7 +139,12 @@ export default function EmployeListScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 12,
+    paddingHorizontal: 5,
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   btnShowModalFilter: {
     padding: 12,

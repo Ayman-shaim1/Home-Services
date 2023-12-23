@@ -25,8 +25,11 @@ import Toast from "./Toast";
 import JobHistoryItem from "./JobHistoryItem";
 import Picker from "./Picker";
 import Map from "./Map";
+import NotificationItem from "./NotificationItem";
+
 
 export {
+  NotificationItem,
   Map,
   Picker,
   JobHistoryItem,

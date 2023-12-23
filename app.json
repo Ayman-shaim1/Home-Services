@@ -1,5 +1,6 @@
 {
   "expo": {
+    "main": "App.js",
     "plugins": [
       [
         "expo-location",
@@ -19,9 +20,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.helloworld.homeservice"

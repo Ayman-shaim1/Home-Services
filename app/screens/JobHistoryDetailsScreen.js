@@ -6,7 +6,6 @@ import {
   Heading,
   Label,
   Map,
-  Rating,
   RatingPicker,
   Screen,
   TextInput,
@@ -14,8 +13,10 @@ import {
 import colors from "../config/colors";
 import { useState } from "react";
 
-export default function JobHistoryDetails({ navigation }) {
-  const [showModal, setShowModal] = useState(false);
+export default function JobHistoryDetailsScreen({ navigation }) {
+  const [showFermerModal, setFermerShowModal] = useState(false);
+  const [showNegocierModal, setNegocierShowModal] = useState(false);
+
   const [ratingNumber, setRatingNumber] = useState(1);
 
   return (
@@ -51,18 +52,56 @@ export default function JobHistoryDetails({ navigation }) {
         <Rating number={5} />
         <Label text={"Hello world"} />
       </View> */}
-      <Button icon={"minus-network"} text="fermer" onPress={() => setShowModal(true)} />
-      <BottomModal visible={showModal} onClose={() => setShowModal(false)}>
+
+      <Button
+        icon={"minus-network"}
+        text="fermer"
+        onPress={() => setFermerShowModal(true)}
+      />
+      
+
+      {/* <Button
+        icon={"cash-plus"}
+        text="negocier le prix"
+        onPress={() => setNegocierShowModal(true)}
+      /> */}
+
+      <BottomModal
+        visible={showFermerModal}
+        onClose={() => setFermerShowModal(false)}
+      >
         <RatingPicker
           label={"nombre des etoiles"}
           number={ratingNumber}
           setNumber={setRatingNumber}
         />
         <TextInput
+          icon={"comment"}
           label={"commentaire"}
           placeholder={"veuillez entrer un commentaire"}
         />
-        <Button text="valider" icon={"comment-check"} onPress={() => setShowModal(true)} />
+        <Button
+          text="valider"
+          icon={"comment-check"}
+          onPress={() => setFermerShowModal(true)}
+        />
+      </BottomModal>
+
+      <BottomModal
+        visible={showNegocierModal}
+        onClose={() => setNegocierShowModal(false)}
+      >
+        <TextInput
+          icon={"account-cash"}
+          label={"commentaire"}
+          placeholder={"veuillez entrer un commentaire"}
+          keyboardType={"numeric"}
+        />
+        <Button
+          icon={"cash-refund"}
+          text="envoyer"
+          onPress={() => setNegocierShowModal(true)}
+        />
       </BottomModal>
     </Screen>
   );
@@ -74,8 +113,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 100,
+    height: 100,
     borderRadius: 15,
     resizeMode: "cover",
   },

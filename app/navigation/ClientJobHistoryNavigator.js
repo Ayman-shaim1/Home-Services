@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import JobHistoryScreen from "../screens/JobHistoryScreen";
-import JobHistoryDetails from "../screens/JobHistoryDetails";
+import JobHistoryDetailsScreen from "../screens/JobHistoryDetailsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,7 +22,7 @@ export default function ClientJobHistoryNavigator() {
       <Stack.Screen
         options={stackOptions}
         name="details"
-        component={JobHistoryDetails}
+        component={JobHistoryDetailsScreen}
       />
     </Stack.Navigator>
   );

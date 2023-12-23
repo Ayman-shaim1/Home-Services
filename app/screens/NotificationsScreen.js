@@ -1,10 +1,10 @@
-import { Text } from "react-native";
-import { Screen } from "../components";
+import { GoBackButton, NotificationItem, Screen } from "../components";
 
-export default function NotificationsScreen(){
+export default function NotificationsScreen({ navigation }){
     return (
         <Screen widthPadding safeArea>
-            <Text>Notifications screen</Text>
+           <GoBackButton navigation={navigation}/>
+           <NotificationItem/>
         </Screen>
     );
 }
