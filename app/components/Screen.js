@@ -1,6 +1,7 @@
 import React from "react";
 import Constants from "expo-constants";
 import { SafeAreaView, ScrollView, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function Screen({
   children,
@@ -30,7 +31,7 @@ export default function Screen({
             },
           ]}
         >
-          {children}
+          <GestureHandlerRootView>{children}</GestureHandlerRootView>
         </ScrollView>
       </SafeAreaView>
     );
@@ -57,7 +58,7 @@ export default function Screen({
             },
           ]}
         >
-          {children}
+          <GestureHandlerRootView>{children}</GestureHandlerRootView>
         </ScrollView>
       </View>
     );

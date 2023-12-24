@@ -5,6 +5,8 @@ export default function NotificationsScreen({ navigation }){
         <Screen widthPadding safeArea>
            <GoBackButton navigation={navigation}/>
            <NotificationItem/>
+           <NotificationItem/>
+           <NotificationItem/>
         </Screen>
     );
 }
