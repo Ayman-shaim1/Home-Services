@@ -40,7 +40,7 @@ export default function JobHistoryScreen({ navigation }) {
   return (
     <Screen widthPadding safeArea>
       <View style={styles.header}>
-        <Heading text={"Historique de demandes"} as="heading5" />
+        <Heading text={"Historique de demandes"} as="heading6" />
 
         <TouchableOpacity
           style={styles.btnShowModalFilter}

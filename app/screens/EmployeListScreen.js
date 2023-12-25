@@ -12,6 +12,7 @@ import {
   Button,
   EmployeItem,
   GoBackButton,
+  Header,
   Heading,
   Label,
   PositionPicker,
@@ -60,7 +61,7 @@ export default function EmployeListScreen({ navigation }) {
 
   return (
     <Screen widthPadding safeArea style={styles.container}>
-      <GoBackButton navigation={navigation} />
+      <Header navigation={navigation} text={"Jardinage"} />
       <View style={styles.header}>
         <PositionPicker />
         <TouchableOpacity
@@ -74,7 +75,6 @@ export default function EmployeListScreen({ navigation }) {
           />
         </TouchableOpacity>
       </View>
-      <Heading as="heading5" text={"Jardinage"} color="black" />
 
       <BottomModal
         visible={showFilterModal}
@@ -83,13 +83,11 @@ export default function EmployeListScreen({ navigation }) {
         <Heading as="heading5" text={"Chercher avec filtre"} />
         <Label text={"Filtrer par prix :"} />
         <Slider
-          style={{ width: "100%"}}
+          style={{ width: "100%" }}
           minimumValue={100}
           maximumValue={1000}
-        
           thumbTintColor={colors.primary}
           minimumTrackTintColor={colors.primary}
-        
           value={maxprix}
           onValueChange={(value) => setMaxprix(value)}
         />

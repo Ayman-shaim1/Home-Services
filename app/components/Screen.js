@@ -8,59 +8,117 @@ export default function Screen({
   style,
   widthPadding = false,
   safeArea = false,
+  scrollEnabled = true,
 }) {
-  if (safeArea) {
-    return (
-      <SafeAreaView
-        style={[
-          style,
-          {
-            paddingTop: widthPadding ? Constants.statusBarHeight : 0,
-            flex: 1,
-          },
-        ]}
-      >
-        <ScrollView
-          showsVerticalScrollIndicator={false} // Set this to false to hide the vertical scroll bar
-          showsHorizontalScrollIndicator={false}
+  if (scrollEnabled) {
+    if (safeArea) {
+      return (
+        <SafeAreaView
           style={[
             style,
             {
-              paddingTop: widthPadding ? 12 : 0,
-              paddingHorizontal: widthPadding ? 10 : 0,
+              paddingTop: widthPadding ? Constants.statusBarHeight : 0,
+              flex: 1,
             },
           ]}
         >
-          <GestureHandlerRootView>{children}</GestureHandlerRootView>
-        </ScrollView>
-      </SafeAreaView>
-    );
+          <ScrollView
+            showsVerticalScrollIndicator={false} // Set this to false to hide the vertical scroll bar
+            showsHorizontalScrollIndicator={false}
+            style={[
+              style,
+              {
+                paddingTop: widthPadding ? 12 : 0,
+                paddingHorizontal: widthPadding ? 10 : 0,
+              },
+            ]}
+          >
+            <GestureHandlerRootView>{children}</GestureHandlerRootView>
+          </ScrollView>
+        </SafeAreaView>
+      );
+    } else {
+      return (
+        <View
+          style={[
+            style,
+            {
+              paddingHorizontal: widthPadding ? 10 : 0,
+              paddingTop: widthPadding ? Constants.statusBarHeight : 0,
+              flex: 1,
+            },
+          ]}
+        >
+          <ScrollView
+            showsVerticalScrollIndicator={false} // Set this to false to hide the vertical scroll bar
+            showsHorizontalScrollIndicator={false}
+            style={[
+              style,
+              {
+                paddingTop: widthPadding ? 12 : 0,
+                paddingHorizontal: widthPadding ? 10 : 0,
+              },
+            ]}
+          >
+            <GestureHandlerRootView>{children}</GestureHandlerRootView>
+          </ScrollView>
+        </View>
+      );
+    }
   } else {
-    return (
-      <View
-        style={[
-          style,
-          {
-            paddingHorizontal: widthPadding ? 10 : 0,
-            paddingTop: widthPadding ? Constants.statusBarHeight : 0,
-            flex: 1,
-          },
-        ]}
-      >
-        <ScrollView
-          showsVerticalScrollIndicator={false} // Set this to false to hide the vertical scroll bar
-          showsHorizontalScrollIndicator={false}
+    if (safeArea) {
+      return (
+        <SafeAreaView
           style={[
             style,
             {
-              paddingTop: widthPadding ? 12 : 0,
-              paddingHorizontal: widthPadding ? 10 : 0,
+              paddingTop: widthPadding ? Constants.statusBarHeight : 0,
+              flex: 1,
             },
           ]}
         >
-          <GestureHandlerRootView>{children}</GestureHandlerRootView>
-        </ScrollView>
-      </View>
-    );
+          <View
+            showsVerticalScrollIndicator={false} // Set this to false to hide the vertical scroll bar
+            showsHorizontalScrollIndicator={false}
+            style={[
+              style,
+              {
+                paddingTop: widthPadding ? 12 : 0,
+                paddingHorizontal: widthPadding ? 10 : 0,
+              },
+            ]}
+          >
+            <GestureHandlerRootView>{children}</GestureHandlerRootView>
+          </View>
+        </SafeAreaView>
+      );
+    } else {
+      return (
+        <View
+          style={[
+            style,
+            {
+              paddingHorizontal: widthPadding ? 10 : 0,
+              paddingTop: widthPadding ? Constants.statusBarHeight : 0,
+              flex: 1,
+            },
+          ]}
+        >
+          <View
+            showsVerticalScrollIndicator={false} // Set this to false to hide the vertical scroll bar
+            showsHorizontalScrollIndicator={false}
+            style={[
+              style,
+              {
+                paddingTop: widthPadding ? 12 : 0,
+                paddingHorizontal: widthPadding ? 10 : 0,
+              },
+            ]}
+          >
+            <GestureHandlerRootView>{children}</GestureHandlerRootView>
+          </View>
+        </View>
+      );
+    }
   }
 }

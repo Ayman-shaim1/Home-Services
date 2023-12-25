@@ -3,6 +3,7 @@ import {
   BottomModal,
   Button,
   GoBackButton,
+  Header,
   Heading,
   Label,
   Map,
@@ -21,7 +22,10 @@ export default function JobHistoryDetailsScreen({ navigation }) {
 
   return (
     <Screen widthPadding safeArea>
-      <GoBackButton navigation={navigation} />
+      <Header
+        navigation={navigation}
+        text={"Details travaille (Maria jhonson)"}
+      />
       <View style={styles.center}>
         <Image source={require("../assets/emp3.jpeg")} style={styles.image} />
       </View>
@@ -58,7 +62,6 @@ export default function JobHistoryDetailsScreen({ navigation }) {
         text="fermer"
         onPress={() => setFermerShowModal(true)}
       />
-      
 
       {/* <Button
         icon={"cash-plus"}

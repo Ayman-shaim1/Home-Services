@@ -1,8 +1,7 @@
-import { Image, ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View, Image } from "react-native";
 import {
   Diviser,
   FloatButton,
-  GoBackButton,
   Heading,
   ReviewContainer,
   Label,
@@ -14,6 +13,7 @@ import {
   Button,
   DatePicker,
   PositionPicker,
+  Header,
 } from "../components";
 import { useState } from "react";
 import { Toast } from "../services";
@@ -33,7 +33,7 @@ export default function EmployeDetailsScreen({ navigation }) {
   return (
     <>
       <Screen widthPadding safeArea style={{ paddingTop: 10 }}>
-        <GoBackButton navigation={navigation} />
+        <Header navigation={navigation} text={"Details Employe (Jhon Doe)"} />
         <Image source={require("../assets/emp1.jpeg")} style={styles.image} />
         <View style={styles.textContainer}>
           <Heading as="heading6" text={"Jhon Doe  (Jardinier) "} />

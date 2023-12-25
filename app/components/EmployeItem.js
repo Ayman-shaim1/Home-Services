@@ -3,12 +3,12 @@ import {
   View,
   Text,
   StyleSheet,
-  Image,
   TouchableOpacity,
   Animated,
 } from "react-native";
 import colors from "../config/colors";
 import Rating from "./Rating";
+import Image from "./Image";
 
 export default function EmployeItem({ navigation, employe, index }) {
   const animationValue = useRef(new Animated.Value(0)).current;
@@ -42,7 +42,7 @@ export default function EmployeItem({ navigation, employe, index }) {
         onPress={() => navigation.navigate("EmployeDetails")}
       >
         <View style={styles.wrapper}>
-          <Image source={employe.image} style={styles.image} />
+          <Image source={employe.image}  />
           <View style={styles.info}>
             <Text style={styles.name}>{employe.name}</Text>
             <Text style={styles.price}>{employe.price} MAD par heure</Text>
@@ -63,12 +63,6 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     flexDirection: "row",
-  },
-  image: {
-    width: 80,
-    height: 80,
-    borderRadius: 15,
-    resizeMode: "cover",
   },
   info: {
     marginLeft: 10,

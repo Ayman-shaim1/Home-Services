@@ -1,6 +1,5 @@
 import useLocation from "./useLocation";
 import useAddress from "./useAddress";
-export  {
-    useAddress,
-    useLocation
-}
+import useTimeAgo from "./useTimeAgo";
+
+export { useTimeAgo, useAddress, useLocation };

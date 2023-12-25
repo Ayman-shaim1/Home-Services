@@ -1,13 +1,17 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import colors from "../config/colors";
 import Heading from "./Heading";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Label from "./Label";
-export default function JobHistoryItem({ navigation , JobHistoryItem}) {
+import Image from "./Image";
+export default function JobHistoryItem({ navigation, JobHistoryItem }) {
   return (
-    <TouchableOpacity style={styles.jobItem} onPress={() => navigation.navigate('details')}>
+    <TouchableOpacity
+      style={styles.jobItem}
+      onPress={() => navigation.navigate("details")}
+    >
       <View style={styles.content}>
-        <Image source={JobHistoryItem.image} style={styles.image} />
+        <Image source={JobHistoryItem.image} />
         <View style={styles.textContent}>
           <Heading text={JobHistoryItem.employeName} as="heading6" />
           <View style={styles.status}>
@@ -15,7 +19,7 @@ export default function JobHistoryItem({ navigation , JobHistoryItem}) {
           </View>
         </View>
       </View>
-      <Label style={styles.textDate}  text={new Date().toLocaleDateString()}/>
+      <Label style={styles.textDate} text={new Date().toLocaleDateString()} />
       <MaterialCommunityIcons
         size={22}
         name="arrow-right"
@@ -35,14 +39,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    
   },
-  image: {
-    width: 80,
-    height: 80,
-    borderRadius: 15,
-    resizeMode: "cover",
-  },
+
   content: {
     flexDirection: "row",
     alignItems: "center",
@@ -55,14 +53,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 7,
     backgroundColor: colors.successSubtle,
     borderRadius: 7,
-    width:80,
+    width: 80,
     justifyContent: "center",
     alignItems: "center",
   },
   statusText: {
     color: colors.success,
     fontSize: 14,
-    fontFamily:'LatoRegular'
+    fontFamily: "LatoRegular",
   },
   textDate: {
     marginTop: 10,

@@ -26,9 +26,12 @@ import JobHistoryItem from "./JobHistoryItem";
 import Picker from "./Picker";
 import Map from "./Map";
 import NotificationItem from "./NotificationItem";
-
+import Image from "./Image";
+import Header from "./Header";
 
 export {
+  Header,
+  Image,
   NotificationItem,
   Map,
   Picker,
@@ -43,7 +46,7 @@ export {
   RatingPicker,
   Label,
   BottomModal,
-  Dropdown as Dropdown,
+  Dropdown,
   Rating,
   EmployeItem,
   ImagePicker,
