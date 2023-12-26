@@ -22,6 +22,7 @@ export default {
       backgroundColor: colors.lightGray,
       borderRadius: 10,
       fontSize: 16,
+      fontFamily: "LatoRegular",
     },
   },
 };

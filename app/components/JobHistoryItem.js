@@ -51,14 +51,14 @@ const styles = StyleSheet.create({
   status: {
     paddingVertical: 10,
     paddingHorizontal: 7,
-    backgroundColor: colors.successSubtle,
+    backgroundColor: colors.warningSubtle,
     borderRadius: 7,
     width: 80,
     justifyContent: "center",
     alignItems: "center",
   },
   statusText: {
-    color: colors.success,
+    color: colors.warning,
     fontSize: 14,
     fontFamily: "LatoRegular",
   },

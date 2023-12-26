@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 15,
-    fontWeight: "bold",
+    fontFamily:'LatoBlack'
     // textTransform:'uppercase'
   },
   image: {

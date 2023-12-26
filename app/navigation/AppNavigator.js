@@ -7,6 +7,7 @@ import NotificationsScreen from '../screens/NotificationsScreen';
 import { Platform, View } from 'react-native';
 import JobHistoryScreen from '../screens/JobHistoryScreen';
 import ClientJobHistoryNavigator from './ClientJobHistoryNavigator';
+import ProfileNavigator from './ProfileNavigator';
 const Tab = createBottomTabNavigator();
 
 
@@ -62,7 +63,7 @@ export default function AppNavigator() {
 
         <Tab.Screen 
             name="Profile" 
-            component={ProfileScreen}
+            component={ProfileNavigator}
                 options={{
                     tabBarIcon: ({ color, size,focused }) => (
                         <MaterialCommunityIcons name={`${focused? "account":"account-outline"}`} color={color} size={34} />

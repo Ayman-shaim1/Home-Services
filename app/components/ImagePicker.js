@@ -3,12 +3,17 @@ import { View, StyleSheet, Text, TouchableOpacity, Image } from "react-native";
 import colors from "../config/colors";
 import { Camera } from "expo-camera";
 import * as ExpoImagePicker from "expo-image-picker";
-import { Ionicons } from "@expo/vector-icons";
 import CloseButton from "./CloseButton";
+import Label from "./Label";
 
-export default function ImagePicker({ label }) {
+export default function ImagePicker({
+  label,
+  image,
+  setImage,
+  source,
+  setSource,
+}) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
-  const [image, setImage] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -42,14 +47,28 @@ export default function ImagePicker({ label }) {
     }
   };
 
+  const closeHandler = () => {
+    setSource(null);
+    setImage(null);
+  };
+
   return (
     <View>
-      {label && <Text style={styles.label}>{label}</Text>}
+      {label && <Label text={label} />}
       <View style={styles.container}>
-        {image ? (
+        {source ? (
           <View style={styles.imageContainer}>
             <CloseButton
-              onPress={() => setImage(null)}
+              onPress={closeHandler}
+              style={styles.btnClose}
+              color={colors.white}
+            />
+            <Image source={source} style={styles.image} />
+          </View>
+        ) : image ? (
+          <View style={styles.imageContainer}>
+            <CloseButton
+              onPress={closeHandler}
               style={styles.btnClose}
               color={colors.white}
             />
@@ -101,7 +120,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 12,
-    fontWeight: "bold",
+    fontFamily: "LatoRegular",
     color: colors.gray,
     zIndex: 1000,
   },

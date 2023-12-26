@@ -80,7 +80,11 @@ export default function Toast() {
               {message}
             </Text>
           </View>
-          <CloseButton  size={18} color={colors[type]} onPress={hideToastHandler} />
+          <CloseButton
+            size={18}
+            color={colors[type]}
+            onPress={hideToastHandler}
+          />
         </Animated.View>
       )}
     </>
@@ -109,7 +113,8 @@ const styles = StyleSheet.create({
     marginRight: 7,
   },
   text: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: "500",
+    fontFamily: "LatoRegular",
   },
 });
