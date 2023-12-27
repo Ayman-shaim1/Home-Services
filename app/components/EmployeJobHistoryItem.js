@@ -4,7 +4,8 @@ import Heading from "./Heading";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Label from "./Label";
 import Image from "./Image";
-export default function JobHistoryItem({ navigation, JobHistoryItem }) {
+
+export default function EmployeJobHistoryItem({ navigation, JobHistoryItem }) {
   return (
     <TouchableOpacity
       style={styles.jobItem}
@@ -13,13 +14,17 @@ export default function JobHistoryItem({ navigation, JobHistoryItem }) {
       <View style={styles.content}>
         <Image source={JobHistoryItem.image} />
         <View style={styles.textContent}>
-          <Heading text={JobHistoryItem.employeName} as="heading6" />
-          <View style={styles.status}>
-            <Text style={styles.statusText}>en cours</Text>
-          </View>
+          <Heading text={JobHistoryItem.employeName} as="headin6" />
         </View>
       </View>
-      <Label style={styles.textDate} text={new Date().toLocaleDateString()} />
+      <View style={{ alignItems: "flex-end" }}>
+        {JobHistoryItem.isCurrent && (
+          <View style={styles.current}>
+            <Text style={styles.currentText}>en cours</Text>
+          </View>
+        )}
+        <Label style={styles.textDate} text={new Date().toLocaleDateString()} />
+      </View>
       <MaterialCommunityIcons
         size={22}
         name="arrow-right"
@@ -66,5 +71,17 @@ const styles = StyleSheet.create({
     marginTop: 10,
     color: colors.black,
     fontWeight: "700",
+  },
+  current: {
+    backgroundColor: colors.primary,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    width: 77,
+    borderRadius: 4,
+    marginBottom: 7,
+  },
+  currentText: {
+    color: colors.white,
+    fontFamily: "LatoBlack",
   },
 });

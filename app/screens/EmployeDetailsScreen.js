@@ -62,6 +62,7 @@ export default function EmployeDetailsScreen({ navigation }) {
       </Screen>
       <View style={styles.btncontainer}>
         <FloatButton
+          color={"primary"}
           icon={"check-network"}
           onPress={() => setShowBottomModal(true)}
         />

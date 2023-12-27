@@ -11,7 +11,7 @@ import {
   Heading,
   BottomModal,
   DatePicker,
-  JobHistoryItem,
+  ClientJobHistoryItem,
   Screen,
   Picker,
   Button,
@@ -33,7 +33,8 @@ const JOBHISTORIES = [
   },
 ];
 
-export default function JobHistoryScreen({ navigation }) {
+
+export default function ClientJobHistoryListScreen({ navigation }) {
   const [showFilterModal, setShowFilterModal] = useState(false);
   const [status, setStatus] = useState(false);
 
@@ -91,7 +92,7 @@ export default function JobHistoryScreen({ navigation }) {
         data={JOBHISTORIES}
         keyExtractor={(item) => item.id}
         renderItem={({ item, index }) => (
-          <JobHistoryItem
+          <ClientJobHistoryItem
             navigation={navigation}
             JobHistoryItem={item}
             index={index}

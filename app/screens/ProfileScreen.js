@@ -1,5 +1,12 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Button, FloatButton, Heading, Image, Label, Screen } from "../components";
+import {
+  Button,
+  FloatButton,
+  Heading,
+  Image,
+  Label,
+  Screen,
+} from "../components";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
 
@@ -97,7 +104,12 @@ export default function ProfileScreen({ navigation }) {
           />
         </TouchableOpacity>
       </Screen>
-      <FloatButton text={"logout"}  icon={"logout"} color="danger" />
+      <Button
+        text={"logout"}
+        icon={"logout"}
+        color="danger"
+        style={{ marginHorizontal: 5 }}
+      />
     </>
   );
 }

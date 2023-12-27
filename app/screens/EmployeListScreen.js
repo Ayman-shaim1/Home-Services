@@ -3,7 +3,6 @@ import {
   StyleSheet,
   FlatList,
   Text,
-  TouchableOpacity,
   View,
 } from "react-native";
 
@@ -14,6 +13,7 @@ import {
   GoBackButton,
   Header,
   Heading,
+  IconButton,
   Label,
   PositionPicker,
   RatingPicker,
@@ -21,7 +21,6 @@ import {
 } from "../components";
 import Slider from "@react-native-community/slider";
 import colors from "../config/colors";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const EMPLOYES = [
   {
@@ -64,16 +63,10 @@ export default function EmployeListScreen({ navigation }) {
       <Header navigation={navigation} text={"Jardinage"} />
       <View style={styles.header}>
         <PositionPicker />
-        <TouchableOpacity
-          style={styles.btnShowModalFilter}
+        <IconButton
           onPress={() => setShowFilterModal(true)}
-        >
-          <MaterialCommunityIcons
-            name="tune-vertical"
-            size={16}
-            color={colors.white}
-          />
-        </TouchableOpacity>
+          icon="tune-vertical"
+        />
       </View>
 
       <BottomModal
@@ -143,10 +136,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-  },
-  btnShowModalFilter: {
-    padding: 12,
-    backgroundColor: colors.secondary,
-    borderRadius: 10,
   },
 });

@@ -22,20 +22,23 @@ import FloatButton from "./FloatButton";
 import DiplomaContainer from "./DiplomaContainer";
 import DatePicker from "./DatePicker";
 import Toast from "./Toast";
-import JobHistoryItem from "./JobHistoryItem";
+import ClientJobHistoryItem from "./ClientJobHistoryItem";
 import Picker from "./Picker";
 import Map from "./Map";
 import NotificationItem from "./NotificationItem";
 import Image from "./Image";
 import Header from "./Header";
-
+import IconButton from "./IconButton";
+import EmployeJobHistoryItem from "./EmployeJobHistoryItem";
 export {
+  EmployeJobHistoryItem,
+  IconButton,
   Header,
   Image,
   NotificationItem,
   Map,
   Picker,
-  JobHistoryItem,
+  ClientJobHistoryItem,
   Toast,
   DatePicker,
   DiplomaContainer,

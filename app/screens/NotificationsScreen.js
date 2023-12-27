@@ -4,14 +4,14 @@ import { useState } from "react";
 import { Toast } from "../services";
 
 export default function NotificationsScreen({ navigation }) {
-  
+
   const [notifications, setNotifications] = useState([
     {
       id: 1,
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia, nulla sit amet eleifend venenatis,",
       user: "Jhon Doe",
-      date: "2023-01-01",
+      date: "2023-12-20",
       seen: true,
     },
     {
@@ -19,49 +19,49 @@ export default function NotificationsScreen({ navigation }) {
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia, nulla sit amet eleifend venenatis,",
       user: "Steve Smith",
-      date: "2023-01-01",
+      date: "2023-12-20",
     },
     {
       id: 3,
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       user: "Maria Johanson",
-      date: "2023-01-01",
+      date: "2023-12-20",
     },
     {
       id: 4,
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       user: "Maria Johanson",
-      date: "2023-01-01",
+      date: "2023-12-20",
     },
     {
       id: 5,
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       user: "Maria Johanson",
-      date: "2023-01-01",
+      date: "2023-12-20",
     },
     {
       id: 6,
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       user: "Maria Johanson",
-      date: "2023-01-01",
+      date: "2023-12-20",
     },
     {
       id: 7,
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       user: "Maria Johanson",
-      date: "2023-01-01",
+      date: "2023-12-20",
     },
     {
       id: 8,
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       user: "Maria Johanson",
-      date: "2023-01-01",
+      date: "2023-12-20",
     },
     {
       id: 9,
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       user: "Maria Johanson",
-      date: "2023-01-01",
+      date: "2023-12-20",
     },
   ]);
 

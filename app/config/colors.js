@@ -10,6 +10,17 @@ export default {
   lightGray: "#F2F2F2",
   backgroundColor: "#f4f4f4",
 
+  primaryRgba: "rgba(0, 130, 246, 1)",
+  secondaryRgba: "rgba(249, 200, 14, 1)",
+  dangerRgba: "rgba(176, 0, 32, 1)",
+  blackRgba: "rgba(0, 0, 0, 1)",
+  whiteRgba: "rgba(255, 255, 255, 1)",
+  warningRgba: "rgba(240, 173, 78, 1)",
+  successRgba: "rgba(75, 191, 115, 1)",
+  grayRgba: "rgba(176, 176, 176, 1)",
+  lightGrayRgba: "rgba(242, 242, 242, 1)",
+  backgroundColorRgba: "rgba(244, 244, 244, 1)",
+
   // subtle :
   primarySubtle: "#d1d1d1",
   secondarySubtle: "#fff",
