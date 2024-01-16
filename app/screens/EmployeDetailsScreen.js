@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ScrollView, StyleSheet, View, Image } from "react-native";
 import {
   Diviser,
@@ -15,7 +16,6 @@ import {
   PositionPicker,
   Header,
 } from "../components";
-import { useState } from "react";
 import { Toast } from "../services";
 
 export default function EmployeDetailsScreen({ navigation }) {

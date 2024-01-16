@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
-import DashboardScreen from "../screens/DashboardScreen";
-import EmployeJobHistoryListScreen from "../screens/EmployeJobHistoryListScreen";
 import NotificationsScreen from "../screens/NotificationsScreen";
-import ProfileNavigator from "./ProfileNavigator";
+import EmployeProfileNavigator from "./EmployeProfileNavigator";
+import EmployeJobHistoryNavigator from "./EmployeJobHistoryNavigator";
+import DashboardNavigator from "./DashboardNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -29,7 +29,7 @@ export default function EmployeAppNavigator() {
     >
       <Tab.Screen
         name="dashboard"
-        component={DashboardScreen}
+        component={DashboardNavigator}
         options={{
           tabBarIcon: ({ color, size, focused }) => (
             <MaterialCommunityIcons
@@ -42,7 +42,7 @@ export default function EmployeAppNavigator() {
       />
       <Tab.Screen
         name="jobHistory"
-        component={EmployeJobHistoryListScreen}
+        component={EmployeJobHistoryNavigator}
         options={{
           tabBarIcon: ({ color, size, focused }) => (
             <MaterialCommunityIcons
@@ -71,7 +71,7 @@ export default function EmployeAppNavigator() {
 
       <Tab.Screen
         name="Profile"
-        component={ProfileNavigator}
+        component={EmployeProfileNavigator}
         options={{
           tabBarIcon: ({ color, size, focused }) => (
             <MaterialCommunityIcons

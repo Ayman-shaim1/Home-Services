@@ -2,12 +2,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ClientNavigator from "./ClientNavigator";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
-import ProfileScreen from "../screens/ProfileScreen";
 import NotificationsScreen from "../screens/NotificationsScreen";
-import { Platform, View } from "react-native";
-import JobHistoryScreen from "../screens/ClientJobHistoryListScreen";
+import { Platform } from "react-native";
 import ClientJobHistoryNavigator from "./ClientJobHistoryNavigator";
-import ProfileNavigator from "./ProfileNavigator";
+import ClientProfileNavigator from "./ClientProfileNavigator";
+
 const Tab = createBottomTabNavigator();
 
 export default function ClientAppNavigator() {
@@ -75,7 +74,7 @@ export default function ClientAppNavigator() {
 
       <Tab.Screen
         name="Profile"
-        component={ProfileNavigator}
+        component={ClientProfileNavigator}
         options={{
           tabBarIcon: ({ color, size, focused }) => (
             <MaterialCommunityIcons

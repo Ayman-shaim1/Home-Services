@@ -86,7 +86,6 @@ const DashboardScreen = ({ navigation }) => {
       </View>
       <View style={styles.inLine}>
         <Heading as="heading6" text={"Les derniers travaux effectués"} />
-        <IconButton icon={"format-list-bulleted-square"} />
       </View>
       <FlatList
         data={JOBHISTORIES}

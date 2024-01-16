@@ -3,8 +3,9 @@ import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
 import { View } from "react-native";
 import NavigationContainer from "../navigation/NavigationContainer";
-import ClientAppNavigator from "../navigation/ClientAppNavigator";
 import EmployeAppNavigator from "../navigation/EmployeAppNavigator";
+import ClientAppNavigator from "../navigation/ClientAppNavigator";
+import LoginNavigator from "../navigation/LoginNavigator";
 
 import { Toast } from "../components";
 
@@ -29,7 +30,8 @@ export default function DefaultLayout() {
     <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <NavigationContainer>
         {/* <ClientAppNavigator /> */}
-        <EmployeAppNavigator />
+        {/* <EmployeAppNavigator /> */}
+        <LoginNavigator />
       </NavigationContainer>
       <Toast />
     </View>

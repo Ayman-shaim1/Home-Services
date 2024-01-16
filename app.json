@@ -1,6 +1,5 @@
 {
   "expo": {
-    "main": "App.js",
     "plugins": [
       [
         "expo-location",
@@ -20,7 +19,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.helloworld.homeservice"
@@ -30,10 +31,20 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.helloworld.homeservice"
+      "package": "com.helloworld.homeservice",
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.FOREGROUND_SERVICE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0d4ceb4e-8841-40aa-8322-1a02a90afa18"
+      }
     }
   }
 }

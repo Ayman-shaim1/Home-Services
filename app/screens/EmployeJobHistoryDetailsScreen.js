@@ -2,11 +2,11 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import {
   BottomModal,
   Button,
-  GoBackButton,
   Header,
   Heading,
   Label,
   Map,
+  Rating,
   RatingPicker,
   Screen,
   TextInput,
@@ -14,7 +14,7 @@ import {
 import colors from "../config/colors";
 import { useState } from "react";
 
-export default function JobHistoryDetailsScreen({ navigation }) {
+export default function EmployeJobHistoryDetailsScreen({ navigation }) {
   const [showFermerModal, setFermerShowModal] = useState(false);
   const [showNegocierModal, setNegocierShowModal] = useState(false);
 
@@ -52,16 +52,16 @@ export default function JobHistoryDetailsScreen({ navigation }) {
         <Label text={"200 MAD par heure"} />
       </View>
 
-      {/* <View style={[styles.center, { marginTop: 20 }]}>
+      <View style={[styles.center, { marginTop: 20 }]}>
         <Rating number={5} />
         <Label text={"Hello world"} />
-      </View> */}
+      </View>
 
-      <Button
+      {/* <Button
         icon={"minus-network"}
         text="fermer"
         onPress={() => setFermerShowModal(true)}
-      />
+      /> */}
 
       {/* <Button
         icon={"cash-plus"}

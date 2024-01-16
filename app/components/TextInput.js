@@ -16,10 +16,13 @@ export default function TextInput({
   secure = false,
   style,
   value,
+  multiline
 }) {
   return (
     <View style={[globalStyle.input.container, style]}>
-      {label && <Label style={globalStyle.input.label} color={"black"} text={label} />}
+      {label && (
+        <Label style={globalStyle.input.label} color={"black"} text={label} />
+      )}
       <View style={globalStyle.input.inputContainer}>
         {icon && (
           <MaterialCommunityIcons
@@ -30,6 +33,7 @@ export default function TextInput({
           />
         )}
         <RNTextInput
+          multiline={multiline}
           style={[
             globalStyle.input.input,
             {

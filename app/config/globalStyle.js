@@ -17,7 +17,8 @@ export default {
     },
 
     input: {
-      paddingVertical: 20,
+      paddingBottom: 20,
+      paddingTop: 21,
       paddingRight: 24,
       backgroundColor: colors.lightGray,
       borderRadius: 10,

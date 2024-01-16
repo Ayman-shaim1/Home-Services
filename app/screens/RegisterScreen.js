@@ -20,7 +20,7 @@ export default function RegisterScreen({ navigation }) {
         <Heading text={"Sign up"} as="heading5" />
         <Heading
           style={styles.subText}
-          text={"entrer votre informations pour s'inscrire"}
+          text={"Entrer votre informations pour s'inscrire"}
           as={"heading6"}
           color={"gray"}
         />
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     margin: 7,
   },
   subText: {
-    marginTop: -5,
   },
   logo: {
     marginTop: 10,
